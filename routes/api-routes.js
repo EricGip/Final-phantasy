@@ -51,9 +51,11 @@ module.exports = function(app) {
     }
   });
 
+  // inserting dummy data 
+
   app.post("/api/post_data", (req, res) => {
 
-    db.Items.create(
+    db.Items.bulkCreate([
       {
       name: "Light Armor",
       Hp: 5,
@@ -68,10 +70,22 @@ module.exports = function(app) {
       Defense: 15,
       Speed: -2,
     },
-    ).then((results) => {
-      res.json({
-        results
-      });
+    {
+      name: "Even Heavier Armor",
+      Hp: 15,
+      Attack: 0,
+      Defense: 20,
+      Speed: -3,
+    },
+    {
+      name: "Heaviest Armor",
+      Hp: 150,
+      Attack: 0,
+      Defense: 150,
+      Speed: -25,
+    }
+    ]).then((results) => {
+      res.json(results)
     })
   });
 
@@ -81,5 +95,7 @@ module.exports = function(app) {
       res.json(dbItems)
     })
   })
+
+  // 
   
 };

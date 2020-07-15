@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       Attack: DataTypes.INTEGER,
       Defense: DataTypes.INTEGER,
       Speed: DataTypes.INTEGER,
+      Category: DataTypes.STRING,
     });
 
     return Items;
