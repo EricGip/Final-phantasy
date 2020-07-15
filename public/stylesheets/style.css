@@ -2,3 +2,18 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.footer {
+  text-align: center;
+  color: snow;
+  background-color: black;
+}
+.navbar {
+  padding-bottom: 20px;
+}
+.card {
+  float: left;
+}
+#potion {
+  padding-bottom: 70px;
+}
