@@ -50,4 +50,52 @@ module.exports = function(app) {
       });
     }
   });
+
+  // inserting dummy data 
+
+  app.post("/api/post_data", (req, res) => {
+
+    db.Items.bulkCreate([
+      {
+      name: "Light Armor",
+      Hp: 5,
+      Attack: 0,
+      Defense: 5,
+      Speed: -1,
+    },
+    {
+      name: "Heavy Armor",
+      Hp: 10,
+      Attack: 0,
+      Defense: 15,
+      Speed: -2,
+    },
+    {
+      name: "Even Heavier Armor",
+      Hp: 15,
+      Attack: 0,
+      Defense: 20,
+      Speed: -3,
+    },
+    {
+      name: "Heaviest Armor",
+      Hp: 150,
+      Attack: 0,
+      Defense: 150,
+      Speed: -25,
+    }
+    ]).then((results) => {
+      res.json(results)
+    })
+  });
+
+  // Route for getting all items in shop
+  app.get("/api/get_items", (req, res) => {
+    db.Items.findAll({}).then(function(dbItems) {
+      res.json(dbItems)
+    })
+  })
+
+  // 
+  
 };
