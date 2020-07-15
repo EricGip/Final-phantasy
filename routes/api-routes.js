@@ -50,4 +50,22 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/api/post_data", (req, res) => {
+
+    db.Items.create({
+      name: "Cloth Armor",
+      Hp: 5,
+      Attack: 0,
+      Defense: 10,
+      Speed: -2,
+    }).then((results) => {
+      res.json({
+        results
+      });
+    })
+  });
+
+  // Route for getting all items in shop
+  
 };
