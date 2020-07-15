@@ -53,7 +53,7 @@ module.exports = function(app) {
 
   // inserting dummy data 
 
-  app.post("/api/post_data", (req, res) => {
+  app.post("/api/post_static_data", (req, res) => {
 
     db.Items.bulkCreate([
       {
@@ -78,16 +78,29 @@ module.exports = function(app) {
       Speed: -3,
     },
     {
-      name: "Heaviest Armor",
-      Hp: 150,
-      Attack: 0,
-      Defense: 150,
-      Speed: -25,
-    }
+      name: "Sword",
+      Attack: 3,
+      Defense: 5,
+      Speed: 5,
+    },
+    {
+      name: "Sword",
+      Attack: 3,
+      Defense: 5,
+      Speed: 5,
+    },
+    {
+      name: "Sword",
+      Attack: 3,
+      Defense: 5,
+      Speed: 5,
+    },
     ]).then((results) => {
       res.json(results)
     })
   });
+
+
 
   // Route for getting all items in shop
   app.get("/api/get_items", (req, res) => {
