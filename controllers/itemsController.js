@@ -17,5 +17,19 @@ router.get("/members", function(req, res) {
     res.render("members")
 })
 
+router.get('/store', function(req, res) {
+    res.render("store")
+})
+
+router.get('/stage1', function(req, res) {
+    res.render("stage1")
+})
+
+router.get('/stage1', function(req, res) {
+    res.render("stage1")
+})
+
+router.get('')
+
 // Export routes for server.js to use.
 module.exports = router;
