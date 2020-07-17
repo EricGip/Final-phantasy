@@ -8,9 +8,36 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
-      email: req.user.email,
-      id: req.user.id
+    db.Stats.findAll({
+      userId: req.user.id
+    }).then(stats => {
+      console.log(stats)
+      // on log in, if no user, 
+      if (!stats.id) {
+        db.Stats.create({
+          Gil: 500,
+          Hp: 5,
+          Attack: 5,
+          Defense: 5,
+          Speed: 5,
+          UserId: req.user.id
+        }).then(results => {
+          res.json({
+            email: req.user.email,
+            id: req.user.id,
+            stats: results
+          });
+        });
+      }
+      else {
+        res.json({
+          email: req.user.email,
+            id: req.user.id,
+            stats: stats
+        })
+      }
+
+      
     });
   });
 
@@ -51,64 +78,85 @@ module.exports = function(app) {
     }
   });
 
-  // inserting dummy data 
+  // inserting dummy data
 
   app.post("/api/post_static_data", (req, res) => {
-
     db.Items.bulkCreate([
       {
-      name: "Light Armor",
+        name: "Light Armor",
+        Hp: 5,
+        Attack: 0,
+        Defense: 5,
+        Speed: -1
+      },
+      {
+        name: "Heavy Armor",
+        Hp: 10,
+        Attack: 0,
+        Defense: 15,
+        Speed: -2
+      },
+      {
+        name: "Even Heavier Armor",
+        Hp: 15,
+        Attack: 0,
+        Defense: 20,
+        Speed: -3
+      },
+      {
+        name: "Sword",
+        Attack: 3,
+        Defense: 5,
+        Speed: 5
+      },
+      {
+        name: "Sword",
+        Attack: 3,
+        Defense: 5,
+        Speed: 5
+      },
+      {
+        name: "Sword",
+        Attack: 3,
+        Defense: 5,
+        Speed: 5
+      }
+    ]).then(results => {
+      res.json(results);
+    });
+  });
+
+  app.post("/api/post_static_data", (req, res) => {
+    db.Stats.Create({
+      Gil: 500,
       Hp: 5,
       Attack: 0,
       Defense: 5,
       Speed: -1,
-    },
-    {
-      name: "Heavy Armor",
-      Hp: 10,
-      Attack: 0,
-      Defense: 15,
-      Speed: -2,
-    },
-    {
-      name: "Even Heavier Armor",
-      Hp: 15,
-      Attack: 0,
-      Defense: 20,
-      Speed: -3,
-    },
-    {
-      name: "Sword",
-      Attack: 3,
-      Defense: 5,
-      Speed: 5,
-    },
-    {
-      name: "Sword",
-      Attack: 3,
-      Defense: 5,
-      Speed: 5,
-    },
-    {
-      name: "Sword",
-      Attack: 3,
-      Defense: 5,
-      Speed: 5,
-    },
-    ]).then((results) => {
-      res.json(results)
-    })
+      userId: req.user.id
+    }).then(results => {
+      res.json(results);
+    });
   });
 
+  // getting stats
 
-
-  // Route for getting all items in shop
-  app.get("/api/get_items", (req, res) => {
-    db.Items.findAll({}).then(function(dbItems) {
-      res.json(dbItems)
+  app.get("/api/user_stats/", (req, res) => {
+    db.Stats.find({
+      UserId: req.user.id
+    }).then(results => {
+      console.log(results);
     })
   })
 
-  // 
-  
+  // userId = req.email for email or req.id
+
+ // Route for getting all items in shop
+    app.get("/api/get_items", (req, res) => {
+      db.Items.findAll({}).then(function(dbItems) {
+        res.json(dbItems);
+      });
+    });
+
+  //
 };
