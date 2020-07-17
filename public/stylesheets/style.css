@@ -14,12 +14,7 @@ form.login {
 .card {
   float: left;
 }
-#potion {
-  padding-bottom: 70px;
-}
-#lightarmor {
-  padding-bottom: 21px;
-}
+
 body {
   background-image: url(/assets/background.png);
   background-size: cover;
@@ -30,4 +25,19 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 20px; */
+}
+.card-body {
+  background-image: url(/assets/brick.png);
+  background-size: cover;
+  background-position: center;
+}
+
+h5 {
+  text-align: center;
+  color: aliceblue;
+  text-size-adjust: 50px;
+}
+
+li {
+  color: aliceblue;
 }
