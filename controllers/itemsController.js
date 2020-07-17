@@ -25,9 +25,5 @@ router.get('/stage1', function(req, res) {
     res.render("stage1")
 })
 
-router.get('/stage1', function(req, res) {
-    res.render("stage1")
-})
-
 // Export routes for server.js to use.
 module.exports = router;
