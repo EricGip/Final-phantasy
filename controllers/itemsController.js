@@ -22,6 +22,7 @@ router.get('/store', function(req, res) {
 })
 
 router.get('/stage1', function(req, res) {
+
     res.render("stage1")
 })
 
