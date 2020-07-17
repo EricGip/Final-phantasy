@@ -1,0 +1,67 @@
+//PULL CHARACTER STATS
+app.get("/api/user_stats", (req, res) => {
+    db.Stats.find({
+        UserID: req.user.id
+    }).then(results => {
+        console.log(results)
+    })
+});
+
+
+
+
+
+//action functions
+switch (expression) {
+    case attack:
+
+        // code block
+
+        break;
+
+    case guard:
+
+        // code block
+
+        break;
+
+    case item:
+
+        break;
+
+    case run:
+
+        //code here
+
+        break;
+
+    default:
+    // code block
+};
+
+//attack!
+function attack() {
+    // route to data base that retrieves the user's attack 
+    // 
+};
+
+//defend...does this reduce damage the user takes?
+function guard() {
+
+};
+
+//use a health pot?
+function item() {
+
+};
+
+//run away and we going to pop up a alert sating...you sissy...you ran away...game over?
+function run() {
+
+};
+
+//win or lose
+function condition() {
+
+};
+
