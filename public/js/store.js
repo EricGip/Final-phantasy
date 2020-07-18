@@ -30,8 +30,8 @@ $(document).ready(function()
         console.log (Stats);
         switch (picked){
             case "sword":
-            $("#axe").addClass("disabled");
-            $("#hammer").addClass("disabled");
+            $("#axe, #hammer").addClass("disabled");
+            // $("#hammer").addClass("disabled");
             user.Attack=user.Attack+3;
             user.Defense=user.Defense+5;
             user.Speed=user.Speed+5;
