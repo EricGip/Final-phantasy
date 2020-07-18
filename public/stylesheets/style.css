@@ -69,6 +69,17 @@ li {
   font-weight: bolder;
 }
 
+#hero-card {
+  position: absolute;
+}
+
+.atk,
+.guard,
+.item,
+.run {
+  color: black;
+}
+
 .card-container {
   margin-top: 100px;
   display: flex;
