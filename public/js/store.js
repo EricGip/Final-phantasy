@@ -19,7 +19,7 @@ $(document).ready(function()
     var Stats;
     $.ajax("api/user_stats").then(function(Stats){
         Stats=Stats
-       console.log ("ajax");
+        console.log ("ajax");
         console.log (Stats);
 
     
