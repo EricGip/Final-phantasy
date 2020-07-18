@@ -7,61 +7,71 @@ app.get("/api/user_stats", (req, res) => {
     })
 });
 
-
-
-
-
 //action functions
-switch (expression) {
-    case attack:
+$(document.readyState(function () {
 
-        // code block
+    var stats;
+    $.ajax("api/user_stats").then(function (stats) {
+        stats = stats
+    });
 
-        break;
+    $(".action").on("click", function (event) {
+        var action = $(this).attr("data")
+        let user = stats;
+        switch (action) {
 
-    case guard:
+            case "attack":
 
-        // code block
+                user.Attack = user.Attack;
 
-        break;
+                break;
 
-    case item:
+            case "guard":
 
-        break;
+                // code block
 
-    case run:
+                break;
 
-        //code here
+            case item:
 
-        break;
+                break;
 
-    default:
-    // code block
-};
+            case run:
 
-//attack!
-function attack() {
-    // route to data base that retrieves the user's attack 
-    // 
-};
+                //code here
 
-//defend...does this reduce damage the user takes?
-function guard() {
+                break;
 
-};
+            default:
+            // code block
+        };
+    });
 
-//use a health pot?
-function item() {
 
-};
+    //attack!
+    function attack() {
+        // route to data base that retrieves the user's attack 
+        // 
+    };
 
-//run away and we going to pop up a alert sating...you sissy...you ran away...game over?
-function run() {
+    //defend...does this reduce damage the user takes?
+    function guard() {
 
-};
+    };
 
-//win or lose
-function condition() {
+    //use a health pot?
+    function item() {
 
-};
+    };
 
+    //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
+    function run() {
+
+    };
+
+    //win or lose
+    function condition() {
+
+    };
+
+}));
