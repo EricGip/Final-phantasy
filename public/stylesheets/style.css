@@ -34,6 +34,10 @@ body {
   background-position: center;
 }
 
+#lightarmor {
+  padding-bottom: 12px;
+}
+
 h5 {
   text-align: center;
   color: aliceblue;
