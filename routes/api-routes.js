@@ -20,11 +20,7 @@ module.exports = function(app) {
           Attack: 5,
           Defense: 5,
           Speed: 5,
-<<<<<<< HEAD
           Potions: 1,
-=======
-          Potion: 1,
->>>>>>> e877bf0c5db34bda4099976c47e6c951bad0df21
           UserId: req.user.id
         }).then(results => {
           res.json({
