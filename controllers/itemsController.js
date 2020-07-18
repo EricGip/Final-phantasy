@@ -18,7 +18,12 @@ router.get("/members", function(req, res) {
 });
 
 router.get("/store", function(req, res) {
-  res.render("store");
+  db.Stats.findOne({ UserId: req.user.id }).then(stats => {
+    res.render("store", { stats: stats.dataValues });
+    console.log(stats.dataValues)
+  })
+
+  // res.render("store")
 });
 
 router.get("/stage1", function(req, res) {
