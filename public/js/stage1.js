@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 switch(expression) {
     case attack:
       // code block
@@ -25,7 +24,6 @@ switch(expression) {
   }
 
   
-=======
 //PULL CHARACTER STATS
 app.get("/api/user_stats", (req, res) => {
     db.Stats.find({
@@ -105,4 +103,3 @@ $(document.readyState(function () {
     };
 
 }));
->>>>>>> bce395ed42df76b18c973bfc0a13d0ec14dfcf6d
