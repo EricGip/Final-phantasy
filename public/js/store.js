@@ -39,6 +39,7 @@ $(document).ready(function()
             break;
 
             case "axe":
+            $("#sword, #hammer").addClass("disabled");
             user.Attack=user.Attack+4;
             user.Defense=user.Defense+3;
             user.Speed=user.Speed+3;
@@ -46,6 +47,7 @@ $(document).ready(function()
             break;
 
             case "hammer":
+            $("#sword, #axe").addClass("disabled");
             user.Attack=user.Attack+5;
             user.Defense=user.Defense+2;
             user.Speed=user.Speed+2
@@ -61,6 +63,7 @@ $(document).ready(function()
             break;
 
             case "light":
+            $("#heavy").addClass("disabled");
             user.Hp=user.Hp+15;
             user.Attack=user.Attack+8;
             user.Defense=user.Defense+20;
@@ -69,6 +72,7 @@ $(document).ready(function()
             break;
 
             case "heavy":
+            $("#light").addClass("disabled");
             user.Hp=user.Hp+15;
             user.Attack=user.Attack+8;
             user.Defense=user.Defense+50;
