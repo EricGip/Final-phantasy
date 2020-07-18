@@ -22,6 +22,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   /* height: 100vh;
   display: flex; */
   /* flex-direction: column;
@@ -43,4 +44,10 @@ h5 {
 
 li {
   color: aliceblue;
+}
+
+.card-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
 }
