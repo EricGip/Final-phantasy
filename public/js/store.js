@@ -30,6 +30,8 @@ $(document).ready(function()
         console.log (Stats);
         switch (picked){
             case "sword":
+            $("#axe").addClass("disabled");
+            $("#hammer").addClass("disabled");
             user.Attack=user.Attack+3;
             user.Defense=user.Defense+5;
             user.Speed=user.Speed+5;
@@ -43,8 +45,16 @@ $(document).ready(function()
             user.Gil=user.Gil-5;
             break;
 
+            case "hammer":
+            user.Attack=user.Attack+5;
+            user.Defense=user.Defense+2;
+            user.Speed=user.Speed+2
+            user.Gil=user.Gil-5
+            break;
+
             case "potion":
             user.gil=user.gil-10;
+            user.potion += 1; 
             // Item=
             // "HP+: 20",
             // "Gil: 10"
