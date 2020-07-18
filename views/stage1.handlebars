@@ -45,18 +45,19 @@
         </div>
         <ul class="list-group list-group-flush">
             <br />
-            <li class="atk"><button>Attack</button></li>
+            <li class="atk"><button class="action" data="attack">Attack</button></li>
             <br />
-            <li class="guard"><button>Guard</button></li>
+            <li class="guard"><button class="action" data="guard">Guard</button></li>
             <br />
-            <li class="item"><button>Item</button></li>
+            <li class="item"><button class="action" data="potion">Item</button></li>
             <br />
-            <li class="run"><button>Run</button></li>
+            <li class="run"><button class="action" data="run">Run</button></li>
             <br />
         </ul>
     </div>
+    <br>
     <div class="userStat">
-        {{ stats.hp }}
+        <h4>{{ stats.hp }}</h4>
     </div>
     <footer class="footer">Game 2020</footer>
 </body>
