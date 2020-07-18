@@ -15,9 +15,10 @@ $(document.readyState(function () {
         stats = stats
     });
 
-    $(".action").on("click", function (event) {
+    $(document).on("click", ".action", function (event) {
         var action = $(this).attr("data")
         let user = stats;
+
         switch (action) {
 
             case "attack":
@@ -28,19 +29,27 @@ $(document.readyState(function () {
 
             case "guard":
 
-                user.
+                user.Defense = user.Defense;
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+                }
 
-                    break;
+                getRandomInt()
 
-            case "item":
+                break;
 
-                user.
+            case "potion":
 
-                    break;
+                user.Hp += 10;
+                user.potion -= 1;
+
+                break;
 
             case "run":
 
-                //code here
+
 
                 break;
 
@@ -77,3 +86,9 @@ $(document.readyState(function () {
     };
 
 }));
+
+// function getRandomInt(min, max) {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+//   }
