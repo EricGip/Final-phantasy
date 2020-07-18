@@ -1,6 +1,6 @@
 // event listener for buy 
 
-const items = require("../../models/items");
+// const items = require("../../models/items");
 
 
 // app.get("/api/user_stats/", (req, res) => {
@@ -11,16 +11,23 @@ const items = require("../../models/items");
 
 // make an ajax call to the item db and give it to character
 
-$(document.ready(function()
 
+
+$(document).ready(function()
 {
-    var stats;
-    $.ajax("api/user_stats").then(function(stats){
-        stats=stats
-    })
-    $(".buy").on("click", function(event){
-        var picked=$(this).attr("data") 
-        let user = stats;
+  console.log ("hello");
+    var Stats;
+    $.ajax("api/user_stats").then(function(Stats){
+        Stats=Stats
+       console.log ("ajax");
+        console.log (Stats);
+
+    
+    $(document).on("click", ".buy", function(event){
+        var picked=$(this).attr("data");
+        console.log ("clicked");
+        let user = Stats;
+        console.log (Stats);
         switch (picked){
             case "sword":
             user.Attack=user.Attack+3;
@@ -58,24 +65,10 @@ $(document.ready(function()
             user.Speed=user.Speed-10;
             user.Gil=user.Gil-25;
             break;    
-        }
-        
-
-        
-        var id=$(this).data("id");
-        var newSword=$(this).data("newSword");
-
-        var newSwordUser = {
-            sword: newSword
-        };
-        $.ajax("/api/post_data/" + id, {
-            type: "PUT",
-            data: newSwordUser
-        }).then(
-            function () {
-                console.log("User has received", newSword);
-                location.reload();
-            }
-        );
-    });
+        }        
+    })
 })
+}
+)
+
+
