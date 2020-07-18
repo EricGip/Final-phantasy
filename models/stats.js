@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       Attack: DataTypes.INTEGER,
       Defense: DataTypes.INTEGER,
       Speed: DataTypes.INTEGER,
+      Potion: DataTypes.INTEGER,
     });
   
     Stats.associate = function(models) {
