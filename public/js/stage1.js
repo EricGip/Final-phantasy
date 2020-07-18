@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+switch(expression) {
+    case attack:
+      // code block
+      break;
+    case guard:
+      // code block
+      break;
+    case item:
+        break;
+    
+    default:
+      // code block
+  }
+
+
+  function attack() {
+      // route to data base that retrieves the user's attack 
+
+      // 
+  }
+
+  function useItem() {
+
+  }
+
+  
+=======
 //PULL CHARACTER STATS
 app.get("/api/user_stats", (req, res) => {
     db.Stats.find({
@@ -77,3 +105,4 @@ $(document.readyState(function () {
     };
 
 }));
+>>>>>>> bce395ed42df76b18c973bfc0a13d0ec14dfcf6d
