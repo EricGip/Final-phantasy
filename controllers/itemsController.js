@@ -28,7 +28,7 @@ router.get("/store", function(req, res) {
 
 router.get("/stage1", function(req, res) {
   db.Stats.findOne({ UserId: req.user.id }).then(stats => {
-    res.render("stage1", { stats: stats });
+    res.render("stage1", { stats: stats.DataValues });
   });
 });
 
