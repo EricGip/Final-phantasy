@@ -11,16 +11,17 @@ const items = require("../../models/items");
 
 // make an ajax call to the item db and give it to character
 
-$(document.ready(function()
 
+
+$(document.ready(function()
 {
-    var stats;
-    $.ajax("api/user_stats").then(function(stats){
-        stats=stats
+    var Stats;
+    $.ajax("api/user_stats").then(function(Stats){
+        Stats=Stats
     })
     $(".buy").on("click", function(event){
-        var picked=$(this).attr("data") 
-        let user = stats;
+        var picked=$(this).attr("data")
+        let user = Stats;
         switch (picked){
             case "sword":
             user.Attack=user.Attack+3;
@@ -58,24 +59,8 @@ $(document.ready(function()
             user.Speed=user.Speed-10;
             user.Gil=user.Gil-25;
             break;    
-        }
-        
+        }        
+    })
+}
+))
 
-        
-        var id=$(this).data("id");
-        var newSword=$(this).data("newSword");
-
-        var newSwordUser = {
-            sword: newSword
-        };
-        $.ajax("/api/post_data/" + id, {
-            type: "PUT",
-            data: newSwordUser
-        }).then(
-            function () {
-                console.log("User has received", newSword);
-                location.reload();
-            }
-        );
-    });
-})
