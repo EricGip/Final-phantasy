@@ -1,18 +1,3 @@
-// event listener for buy 
-
-// const items = require("../../models/items");
-
-
-// app.get("/api/user_stats/", (req, res) => {
-//     db.Stats.update({
-//       attack: req.user.attack + 3 (or whatever item stat)
-//       defense: req.user.defense + 3 
-//     })
-
-// make an ajax call to the item db and give it to character
-
-
-
 $(document).ready(function()
 {
   console.log ("hello");
@@ -31,11 +16,12 @@ $(document).ready(function()
         switch (picked){
             case "sword":
             $("#axe, #hammer").addClass("disabled");
-            // $("#hammer").addClass("disabled");
             user.Attack=user.Attack+3;
             user.Defense=user.Defense+5;
             user.Speed=user.Speed+5;
             user.Gil=user.Gil-5;
+            $("#sword").addClass("disabled");
+            $("#sword").prop("disabled", true);
             break;
 
             case "axe":
@@ -44,22 +30,28 @@ $(document).ready(function()
             user.Defense=user.Defense+3;
             user.Speed=user.Speed+3;
             user.Gil=user.Gil-5;
+            $("#axe").addClass("disabled");
+            $("axe").prop("disabled",true);
             break;
 
             case "hammer":
             $("#sword, #axe").addClass("disabled");
             user.Attack=user.Attack+5;
             user.Defense=user.Defense+2;
-            user.Speed=user.Speed+2
-            user.Gil=user.Gil-5
+            user.Speed=user.Speed+2;
+            user.Gil=user.Gil-5;
+            $("#hammer").addClass("disabled");
+            $("#hammer").prop("disabled", true);
             break;
 
             case "potion":
-            user.gil=user.gil-10;
-            user.potion += 1; 
-            // Item=
-            // "HP+: 20",
-            // "Gil: 10"
+            user.Potion=user.Potion+1;
+            user.Gil=user.Gil-10;
+            if (user.Potion>=5)
+            { console.log (user.Potion); 
+            $("#potion").addClass("disabled");
+            $("#potion").prop("disabled", true);
+            }
             break;
 
             case "light":
@@ -69,6 +61,8 @@ $(document).ready(function()
             user.Defense=user.Defense+20;
             user.Speed=user.Speed-3;
             user.Gil=user.Gil-25;
+            $("#light").addClass("disabled");
+            $("#light").addClass("disabled");
             break;
 
             case "heavy":
@@ -78,6 +72,8 @@ $(document).ready(function()
             user.Defense=user.Defense+50;
             user.Speed=user.Speed-10;
             user.Gil=user.Gil-25;
+            $("#heavy").addClass("disabled");
+            $("#light").addClass("disabled");
             break;    
         }        
     })
