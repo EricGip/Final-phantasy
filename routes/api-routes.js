@@ -141,11 +141,12 @@ module.exports = function(app) {
 
   // getting stats
 
-  app.get("/api/user_stats/", (req, res) => {
+  app.get("/api/user_stats", (req, res) => {
     db.Stats.find({
       UserId: req.user.id
     }).then(results => {
       console.log(results);
+      res.json(results);
     })
   })
 
