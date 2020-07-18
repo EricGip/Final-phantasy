@@ -57,19 +57,21 @@
         </ul>
     </div>
 
-            <p class="card-text">
-            A {{monster.name}} is in front of you, what will you do?
-            {{monster.hp}}
-            {{monster.attack}}
-            {{monster.defense}}
-        </p>
 
-    <br>
+    <p class="card-text">
+        A {{monster.name}} is in front of you, what will you do?
+        {{monster.hp}}
+        {{monster.attack}}
+        {{monster.defense}}
+    </p>
+
     <div class="userStat">
-        <h4> 
-            {{stats.hp}}
-            
-        </h4>
+        Hit Points(HP): {{ stats.hp }}
+        Attack Power: {{stats.attack}}
+        Defense: {{stats.defense}}
+        Speed: {{user.speed}}
+        Potion Count: #(place holder)
+        Gil: {{user.gil}}g
     </div>
     <footer class="footer">Game 2020</footer>
 </body>

@@ -11,6 +11,18 @@ app.get("/api/user_stats", (req, res) => {
 $(
   document.readyState(function() {
     var stats;
+<<<<<<< HEAD
+=======
+    $.ajax("api/user_stats").then(function (stats) {
+        stats = stats
+    });
+
+    $(document).on("click", ".action", function (event) {
+        var action = $(this).attr("data")
+        let user = stats;
+
+        switch (action) {
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
 
     monsters = [ orc, slime, chocobo]
 
@@ -20,6 +32,7 @@ $(
 
     console.log(getRandomInt(monsters.length));
 
+<<<<<<< HEAD
     $.ajax("api/user_stats").then(function(stats) {
       stats = stats;
     });
@@ -36,12 +49,37 @@ $(
 
         case "guard":
           user.break;
+=======
+            case "guard":
+
+                user.Defense = user.Defense;
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+                }
+
+                getRandomInt()
+
+                break;
+
+            case "potion":
+
+                user.Hp += 10;
+                user.potion -= 1;
+
+                break;
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
 
         case "item":
           user.break;
 
+<<<<<<< HEAD
         case "run":
           //code here
+=======
+
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
 
           break;
 
@@ -66,6 +104,20 @@ $(
     function run() {}
 
     //win or lose
+<<<<<<< HEAD
     function condition() {}
   })
 );
+=======
+    function condition() {
+
+    };
+
+}));
+
+// function getRandomInt(min, max) {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+//   }
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
