@@ -34,6 +34,10 @@ body {
   background-position: center;
 }
 
+#lightarmor {
+  padding-bottom: 12px;
+}
+
 h5 {
   text-align: center;
   color: aliceblue;
@@ -48,4 +52,21 @@ li {
   margin-top: 100px;
   display: flex;
   justify-content: center;
+}
+.begin-btn {
+  margin-top: 100px;
+  /* display: flex;
+  justify-content: center; */
+  background-color: aqua;
+  color: red;
+  font-weight: bold;
+  font-size: x-large;
+  font-family: cursive;
+  border-radius: 50px;
+  padding: 50px;
+}
+
+.login-container {
+  color: red;
+  font-family: cursive;
 }
