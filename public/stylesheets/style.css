@@ -43,9 +43,28 @@ h5 {
   color: aliceblue;
   text-size-adjust: 50px;
 }
+label {
+  color: red;
+  font-family: cursive;
+  font-size: large;
+}
 
 li {
   color: aliceblue;
+}
+
+#signIn {
+  color: red;
+  font-family: cursive;
+  font-weight: bolder;
+}
+
+.log-in {
+  color: red;
+}
+
+.here {
+  font-weight: bolder;
 }
 
 .card-container {
