@@ -1,16 +1,18 @@
 //PULL CHARACTER STATS
 app.get("/api/user_stats", (req, res) => {
-    db.Stats.find({
-        UserID: req.user.id
-    }).then(results => {
-        console.log(results)
-    })
+  db.Stats.find({
+    UserID: req.user.id
+  }).then(results => {
+    console.log(results);
+  });
 });
 
 //action functions
-$(document.readyState(function () {
-
+$(
+  document.readyState(function() {
     var stats;
+<<<<<<< HEAD
+=======
     $.ajax("api/user_stats").then(function (stats) {
         stats = stats
     });
@@ -20,13 +22,34 @@ $(document.readyState(function () {
         let user = stats;
 
         switch (action) {
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
 
-            case "attack":
+    monsters = [ orc, slime, chocobo]
 
-                user.Attack = user.Attack;
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
 
-                break;
+    console.log(getRandomInt(monsters.length));
 
+<<<<<<< HEAD
+    $.ajax("api/user_stats").then(function(stats) {
+      stats = stats;
+    });
+
+    $(".action").on("click", function(event) {
+      var action = $(this).attr("data");
+      let user = stats;
+
+      switch (action) {
+        case "attack":
+          user.Attack = user.Attack;
+
+          break;
+
+        case "guard":
+          user.break;
+=======
             case "guard":
 
                 user.Defense = user.Defense;
@@ -46,41 +69,46 @@ $(document.readyState(function () {
                 user.potion -= 1;
 
                 break;
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
 
-            case "run":
+        case "item":
+          user.break;
 
+<<<<<<< HEAD
+        case "run":
+          //code here
+=======
 
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
 
-                break;
+          break;
 
-            default:
-            // code block
-        };
+        default:
+        // code block
+      }
     });
-
 
     //attack!
     function attack() {
-        // route to data base that retrieves the user's attack 
-        // 
-    };
+      // route to data base that retrieves the user's attack
+      //
+    }
 
     //defend...does this reduce damage the user takes?
-    function guard() {
-
-    };
+    function guard() {}
 
     //use a health pot?
-    function item() {
-
-    };
+    function item() {}
 
     //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
-    function run() {
-
-    };
+    function run() {}
 
     //win or lose
+<<<<<<< HEAD
+    function condition() {}
+  })
+);
+=======
     function condition() {
 
     };
@@ -92,3 +120,4 @@ $(document.readyState(function () {
 //     max = Math.floor(max);
 //     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 //   }
+>>>>>>> 031999d54806a816e7b72178e04728aa989f28c3
