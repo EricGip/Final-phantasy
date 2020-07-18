@@ -2,56 +2,68 @@
 
 const items = require("../../models/items");
 
+
+// app.get("/api/user_stats/", (req, res) => {
+//     db.Stats.update({
+//       attack: req.user.attack + 3 (or whatever item stat)
+//       defense: req.user.defense + 3 
+//     })
+
 // make an ajax call to the item db and give it to character
 
-$(function () {
-    $(".buy").on("click", function (event) {
-        var picked = $(this).attr("data")
-        switch (picked) {
+$(document.ready(function()
+
+{
+    var stats;
+    $.ajax("api/user_stats").then(function(stats){
+        stats=stats
+    })
+    $(".buy").on("click", function(event){
+        var picked=$(this).attr("data") 
+        let user = stats;
+        switch (picked){
             case "sword":
-                Item =
-                    "Attack: 3",
-                    "Defense: 5",
-                    "Speed: 5",
-                    "Gil:5";
-                break;
+            user.Attack=user.Attack+3;
+            user.Defense=user.Defense+5;
+            user.Speed=user.Speed+5;
+            user.Gil=user.Gil-5;
+            break;
 
             case "axe":
-                Item =
-                    "Attack: 4",
-                    "Defense: 3",
-                    "Speed: 3",
-                    "Gil: 5"
-                break;
+            user.Attack=user.Attack+4;
+            user.Defense=user.Defense+3;
+            user.Speed=user.Speed+3;
+            user.Gil=user.Gil-5;
+            break;
 
             case "potion":
-                Item =
-                    "HP+: 20",
-                    "Gil: 10"
-                break;
+            user.gil=user.gil-10;
+            // Item=
+            // "HP+: 20",
+            // "Gil: 10"
+            break;
 
             case "light":
-                Item =
-                    "HP: 15",
-                    "Attack: 8",
-                    "Defense: 20",
-                    "Speed: -3",
-                    "Gil: 25"
-                break;
+            user.Hp=user.Hp+15;
+            user.Attack=user.Attack+8;
+            user.Defense=user.Defense+20;
+            user.Speed=user.Speed-3;
+            user.Gil=user.Gil-25;
+            break;
 
             case "heavy":
-                Item =
-                    "HP: 30",
-                    "Attack: 0",
-                    "Defense: 50",
-                    "Speed: -10",
-                    "Gil: 25"
-                break;
+            user.Hp=user.Hp+15;
+            user.Attack=user.Attack+8;
+            user.Defense=user.Defense+50;
+            user.Speed=user.Speed-10;
+            user.Gil=user.Gil-25;
+            break;    
         }
+        
 
-
-        var id = $(this).data("id");
-        var newSword = $(this).data("newSword");
+        
+        var id=$(this).data("id");
+        var newSword=$(this).data("newSword");
 
         var newSwordUser = {
             sword: newSword
