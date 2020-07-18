@@ -28,15 +28,17 @@ $(document.readyState(function () {
 
             case "guard":
 
-                // code block
+                user.
 
-                break;
+                    break;
 
-            case item:
+            case "item":
 
-                break;
+                user.
 
-            case run:
+                    break;
+
+            case "run":
 
                 //code here
 
