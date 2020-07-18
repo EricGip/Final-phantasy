@@ -1,105 +1,71 @@
-switch(expression) {
-    case attack:
-      // code block
-      break;
-    case guard:
-      // code block
-      break;
-    case item:
-        break;
-    
-    default:
-      // code block
-  }
-
-
-  function attack() {
-      // route to data base that retrieves the user's attack 
-
-      // 
-  }
-
-  function useItem() {
-
-  }
-
-  
 //PULL CHARACTER STATS
 app.get("/api/user_stats", (req, res) => {
-    db.Stats.find({
-        UserID: req.user.id
-    }).then(results => {
-        console.log(results)
-    })
+  db.Stats.find({
+    UserID: req.user.id
+  }).then(results => {
+    console.log(results);
+  });
 });
 
 //action functions
-$(document.readyState(function () {
-
+$(
+  document.readyState(function() {
     var stats;
-    $.ajax("api/user_stats").then(function (stats) {
-        stats = stats
+
+    monsters = [ orc, slime, chocobo]
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    console.log(getRandomInt(monsters.length));
+
+    $.ajax("api/user_stats").then(function(stats) {
+      stats = stats;
     });
 
-    $(".action").on("click", function (event) {
-        var action = $(this).attr("data")
-        let user = stats;
-        switch (action) {
+    $(".action").on("click", function(event) {
+      var action = $(this).attr("data");
+      let user = stats;
 
-            case "attack":
+      switch (action) {
+        case "attack":
+          user.Attack = user.Attack;
 
-                user.Attack = user.Attack;
+          break;
 
-                break;
+        case "guard":
+          user.break;
 
-            case "guard":
+        case "item":
+          user.break;
 
-                user.
+        case "run":
+          //code here
 
-                    break;
+          break;
 
-            case "item":
-
-                user.
-
-                    break;
-
-            case "run":
-
-                //code here
-
-                break;
-
-            default:
-            // code block
-        };
+        default:
+        // code block
+      }
     });
-
 
     //attack!
     function attack() {
-        // route to data base that retrieves the user's attack 
-        // 
-    };
+      // route to data base that retrieves the user's attack
+      //
+    }
 
     //defend...does this reduce damage the user takes?
-    function guard() {
-
-    };
+    function guard() {}
 
     //use a health pot?
-    function item() {
-
-    };
+    function item() {}
 
     //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
-    function run() {
-
-    };
+    function run() {}
 
     //win or lose
-    function condition() {
-
-    };
-
-}));
+    function condition() {}
+  })
+);

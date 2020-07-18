@@ -40,9 +40,10 @@
         <div class="card-body">
             <h5 class="card-title">FIGHT!!!</h5>
             <p class="card-text">
-                A monster is in front of you, what will you do?
+                A {{monster.name}} is in front of you, what will you do?
             </p>
         </div>
+
         <ul class="list-group list-group-flush">
             <br />
             <li class="atk"><button class="action" data="attack">Attack</button></li>
@@ -55,9 +56,20 @@
             <br />
         </ul>
     </div>
+
+            <p class="card-text">
+            A {{monster.name}} is in front of you, what will you do?
+            {{monster.hp}}
+            {{monster.attack}}
+            {{monster.defense}}
+        </p>
+
     <br>
     <div class="userStat">
-        <h4>{{ stats.hp }}</h4>
+        <h4> 
+            {{stats.hp}}
+            
+        </h4>
     </div>
     <footer class="footer">Game 2020</footer>
 </body>
