@@ -1,6 +1,6 @@
 // event listener for buy 
 
-const items = require("../../models/items");
+// const items = require("../../models/items");
 
 
 // app.get("/api/user_stats/", (req, res) => {
@@ -13,15 +13,21 @@ const items = require("../../models/items");
 
 
 
-$(document.ready(function()
+$(document).ready(function()
 {
+  console.log ("hello");
     var Stats;
     $.ajax("api/user_stats").then(function(Stats){
         Stats=Stats
-    })
-    $(".buy").on("click", function(event){
-        var picked=$(this).attr("data")
+       console.log ("ajax");
+        console.log (Stats);
+
+    
+    $(document).on("click", ".buy", function(event){
+        var picked=$(this).attr("data");
+        console.log ("clicked");
         let user = Stats;
+        console.log (Stats);
         switch (picked){
             case "sword":
             user.Attack=user.Attack+3;
@@ -61,6 +67,8 @@ $(document.ready(function()
             break;    
         }        
     })
+})
 }
-))
+)
+
 
