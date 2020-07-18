@@ -32,5 +32,12 @@ router.get("/stage1", function(req, res) {
   });
 });
 
+router.get("/boss", function(req, res) {
+  db.Stats.findOne({ UserId: req.user.id }).then(stats => {
+    res.render("boss", { stats: stats.dataValues });
+    console.log(stats.dataValues)
+  })
+})
+
 // Export routes for server.js to use.
 module.exports = router;
