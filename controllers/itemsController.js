@@ -72,6 +72,14 @@ router.get("/stage1", function(req, res) {
 
 router.get("/boss", function(req, res) {
   db.Stats.findOne({ UserId: req.user.id }).then(stats => {
+    boss={
+      name: "Sephiroth",
+      Hp: 30,
+      Attack: 60,
+      Defense: 30
+    }
+    // Boss=[Sephiroth];
+
     res.render("boss", { stats: stats });
     console.log(stats);
   });
