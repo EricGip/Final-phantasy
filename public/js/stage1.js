@@ -1,15 +1,15 @@
 //PULL CHARACTER STATS
 app.get("/api/user_stats", (req, res) => {
-    db.Stats.find({
-        UserID: req.user.id
-    }).then(results => {
-        console.log(results)
-    })
+  db.Stats.find({
+    UserID: req.user.id
+  }).then(results => {
+    console.log(results);
+  });
 });
 
 //action functions
-$(document.readyState(function () {
-
+$(
+  document.readyState(function() {
     var stats;
     $.ajax("api/user_stats").then(function (stats) {
         stats = stats
@@ -21,17 +21,35 @@ $(document.readyState(function () {
 
         switch (action) {
 
-            case "attack":
+    monsters = [ orc, slime, chocobo]
 
-                user.Attack = user.Attack;
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
 
-                break;
+    console.log(getRandomInt(monsters.length));
 
+    $.ajax("api/user_stats").then(function(stats) {
+      stats = stats;
+    });
+
+    $(".action").on("click", function(event) {
+      var action = $(this).attr("data");
+      let user = stats;
+
+      switch (action) {
+        case "attack":
+          user.Attack = user.Attack;
+
+          break;
+
+        case "guard":
+          user.break;
             case "guard":
 
                 user.Defense = user.Defense;
                 function getRandomInt(min, max) {
-                    min = Math.ceil(min);
+                    min = Math.cell(min);
                     max = Math.floor(max);
                     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
                 }
@@ -47,45 +65,41 @@ $(document.readyState(function () {
 
                 break;
 
-            case "run":
+        case "item":
+          user.break;
+
+        case "run":
+          //code here
 
 
+          break;
 
-                break;
-
-            default:
-            // code block
-        };
+        default:
+        // code block
+      }
     });
-
 
     //attack!
     function attack() {
-        // route to data base that retrieves the user's attack 
-        // 
-    };
+      // route to data base that retrieves the user's attack
+      //
+    }
 
     //defend...does this reduce damage the user takes?
-    function guard() {
-
-    };
+    function guard() {}
 
     //use a health pot?
-    function item() {
-
-    };
+    function item() {}
 
     //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
-    function run() {
-
-    };
+    function run() {}
 
     //win or lose
     function condition() {
 
     };
 
-}));
+});
 
 // function getRandomInt(min, max) {
 //     min = Math.ceil(min);

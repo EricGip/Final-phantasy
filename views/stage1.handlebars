@@ -40,9 +40,10 @@
         <div class="card-body">
             <h5 class="card-title">FIGHT!!!</h5>
             <p class="card-text">
-                A monster is in front of you, what will you do?
+                A {{monster.name}} is in front of you, what will you do?
             </p>
         </div>
+
         <ul class="list-group list-group-flush">
             <br />
             <li class="atk"><button class="action" data="attack">Attack</button></li>
@@ -55,13 +56,22 @@
             <br />
         </ul>
     </div>
+
+
+    <p class="card-text">
+        A {{monster.name}} is in front of you, what will you do?
+        {{monster.hp}}
+        {{monster.attack}}
+        {{monster.defense}}
+    </p>
+
     <div class="userStat">
-        <h4>Hit Points(HP): {{ stats.hp }}</h4>
-        <h4>Attack Power: {{stats.attack}}</h4>
-        <h4>Defense: {{stats.defense}}</h4>
-        <h4>Speed: {{user.speed}}</h4>
-        <h4>Potion Count: #(place holder)</h4>
-        <h4>Gil: {{user.gil}}g</h4>
+        Hit Points(HP): {{ stats.hp }}
+        Attack Power: {{stats.attack}}
+        Defense: {{stats.defense}}
+        Speed: {{user.speed}}
+        Potion Count: #(place holder)
+        Gil: {{user.gil}}g
     </div>
     <footer class="footer">Game 2020</footer>
 </body>

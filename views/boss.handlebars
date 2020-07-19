@@ -17,10 +17,15 @@
       <div class="card-body">
         <h5 class="card-title">FIGHT!!!</h5>
         <p class="card-text">
+          A {{boss.name}} is in front of you, what will you do?
+          {{boss.Hp}}
+          {{boss.Attack}}
+          {{boss.Defense}}
           "Tell me what you cherish most. Give me the pleasure of taking it away."
-            Sephiroth is Here, now is your chance to win!
         </p>
       </div>
+
+      <div>
       <ul class="list-group list-group-flush">
         <br />
         <li  id="atk"data="atk" class="action"><button>Attack</button></li>
@@ -31,6 +36,15 @@
         <br />
       </ul>
     </div>
+<div class="userStats">
+  Hit Points (HP): {{stats.Hp}}
+  Attack Power: {{stats.Attack}}
+  Defense: {{stats.Defense}}
+  Speed: {{user.Speed}}
+  Potion Count: {{user.Potion}}
+  Gil: {{user.gil}}g
+</div>
+
     <script src="js/boss.js"></script>
 
   </body>
