@@ -3,8 +3,6 @@ form.login {
   margin-top: 50px;
 }
 
-
-
 .navbar {
   padding-bottom: 20px;
 }
@@ -28,8 +26,8 @@ body {
 }
 .card-body {
   background-image: url(/assets/brick.png);
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 110%;
+  overflow:auto;
 }
 
 #lightarmor {

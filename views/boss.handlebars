@@ -38,16 +38,16 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <div class="card" id="hero-card" style="width: 10rem;">
+            <div class="card" id="hero-card" style="width: 15rem;">
                 <div class="card-body">
                 <img src="assets/knight.png" class="card-img-top" alt="knight" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
                       {{boss.name}} is in front of you, what will you do?
                     </p>
-                </div>
 
-                <ul class="list-group list-group-flush">
+
+                <ul class="list-group list-group-flush"></ul>
                     <br />
                     <li class="atk"><button class="action" data="attack">Attack</button></li>
                     <br />
@@ -59,9 +59,11 @@
                     <br />
                 </ul>
 
-                <div class="card">
+
                     Hit Points(HP): {{stats.hp}}
+                    <br>
                     Attack Power: {{stats.attack}}
+                    <br>
                     Defense: {{stats.defense}} 
                     <br>
                     Speed: {{stats.speed}}
@@ -92,7 +94,7 @@
                         <p class="card-text">
                             <h5> {{boss.quote}} </h5>
                         </p>
-                    </div>
+
 
                     <ul class="list-group list-group-flush">
                         <br />
@@ -106,13 +108,13 @@
                         <br />
                     </ul>
 
-                    <div class="card">
+
                         Hit Points(HP): {{boss.hp}}
                         <br>
                         Attack Power: {{boss.attack}}
                         <br>
                         Defense: {{boss.defense}}
-                    </div>
+
                 </div>
             </div>
         </div>
