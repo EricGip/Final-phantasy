@@ -91,13 +91,13 @@ router.get("/boss", function(req, res) {
       src:"../assets/Sephiroth.gif",
       quote:"Run or Fight, the outcome is the same, your defeat!"
     };
-    Boss=[Seph];
+    // Boss=[Seph];
 
     // Boss=[Sephiroth];
 
     res.render("boss", { 
       stats: stats.dataValues, 
-      boss: Boss
+      boss: Seph
     });
     
   });

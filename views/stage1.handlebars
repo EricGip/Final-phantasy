@@ -113,7 +113,7 @@
         <div class="col-sm-4">
             <div class="card" id="hero-card" style="width: 10rem;">
                 <div class="card-body">
-                <img src="assets/knight.png" class="card-img-top" alt="knight" />
+                    <img src="assets/knight.png" class="card-img-top" alt="knight" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
                         A {{monster.name}} is in front of you, what will you do?
@@ -133,15 +133,15 @@
                 </ul>
 
                 <div class="card">
-                    Hit Points(HP): {{stats.Hp}}
-                    Attack Power: {{stats.Attack}}
-                    Defense: {{stats.Defense}} 
+                    Hit Points(HP): {{stats.hp}}
+                    Attack Power: {{stats.attack}}
+                    Defense: {{stats.defense}}
                     <br>
-                    Speed: {{stats.Speed}}
+                    Speed: {{stats.speed}}
                     <br>
-                    Potions: {{stats.Potion}}
+                    Potions: {{stats.potion}}
                     <br>
-                    Gil: {{stats.Gil}}g
+                    Gil: {{stats.gil}}g
                 </div>
             </div>
         </div>
@@ -150,7 +150,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"> Combat Log </h5>
-                    <p class="card-text combat-log"> <p class="card-text">
+                    <p class="card-text combat-log">
+                    <p class="card-text">
                         A {{monster.name}} is in front of you, what will you do?
                     </p>
                 </div>
@@ -161,34 +162,35 @@
             <div class="card" id="monster-card" style="width: 10rem;">
                 <div class="card-body">
                     <img id="monster" src="assets/chocobo.png" class="card-img-top right-img" alt="assets/knight.png" />
-                        <h5 class="card-title">FIGHT!!!</h5>
-                        <p class="card-text">
-                            <h5> {{monster.quote}} </h5>
-                        </p>
-                    </div>
+                    <h5 class="card-title">FIGHT!!!</h5>
+                    <p class="card-text">
+                    <h5> {{monster.quote}} </h5>
+                    </p>
+                </div>
 
-                    <ul class="list-group list-group-flush">
-                        <br />
-                        <li class="atk"><button class="action" data="attack">Attack</button></li>
-                        <br />
-                        <li class="guard"><button class="action" data="guard">Guard</button></li>
-                        <br />
-                        <li class="item"><button class="action" data="potion">Item</button></li>
-                        <br />
-                        <li class="run"><button class="action" data="run">Run</button></li>
-                        <br />
-                    </ul>
+                <ul class="list-group list-group-flush">
+                    <br />
+                    <li class="atk"><button class="action" data="attack">Attack</button></li>
+                    <br />
+                    <li class="guard"><button class="action" data="guard">Guard</button></li>
+                    <br />
+                    <li class="item"><button class="action" data="potion">Item</button></li>
+                    <br />
+                    <li class="run"><button class="action" data="run">Run</button></li>
+                    <br />
+                </ul>
 
-                    <div class="card">
-                        Hit Points(HP): {{monster.hp}}
-                        Attack Power: {{monster.attack}}
-                        Defense: {{monster.defense}}
-                    </div>
+                <div class="card">
+                    Hit Points(HP): {{monster.hp}}
+                    Attack Power: {{monster.attack}}
+                    Defense: {{monster.defense}}
                 </div>
             </div>
         </div>
     </div>
   
+    </div>
+
     </div>
 
 

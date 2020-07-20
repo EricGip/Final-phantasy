@@ -43,7 +43,7 @@
                 <img src="assets/knight.png" class="card-img-top" alt="knight" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
-                      {{Boss.name}} is in front of you, what will you do?
+                      {{boss.name}} is in front of you, what will you do?
                     </p>
                 </div>
 
@@ -60,15 +60,15 @@
                 </ul>
 
                 <div class="card">
-                    Hit Points(HP): {{stats.Hp}}
-                    Attack Power: {{stats.Attack}}
-                    Defense: {{stats.Defense}} 
+                    Hit Points(HP): {{stats.hp}}
+                    Attack Power: {{stats.attack}}
+                    Defense: {{stats.defense}} 
                     <br>
-                    Speed: {{stats.Speed}}
+                    Speed: {{stats.speed}}
                     <br>
-                    Potions: {{stats.Potion}}
+                    Potions: {{stats.potion}}
                     <br>
-                    Gil: {{stats.Gil}}g
+                    Gil: {{stats.gil}}g
                 </div>
             </div>
         </div>
@@ -118,6 +118,7 @@
 
     </div>
 
+      <script src="controllers/itemsController.js"></script>
 
     <footer class="footer">Game 2020</footer>
 </body>
