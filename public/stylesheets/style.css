@@ -54,6 +54,16 @@ label {
   font-size: medium;
 }
 
+.largeFont {
+  font-size: large;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+ }
+
 li {
   color: aliceblue;
 }
