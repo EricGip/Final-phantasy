@@ -45,6 +45,15 @@ label {
   font-size: large;
 }
 
+.whiteFont {
+  color: aliceblue;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.mediumFont {
+  font-size: medium;
+}
+
 li {
   color: aliceblue;
 }
@@ -101,6 +110,15 @@ li {
 .right-img {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+.mainSign {
+  background-image: url(/assets/background.png);
+  font-size: 40px;
+}
+
+.gold {
+  font-size: 30px;
 }
 
 .atk,
