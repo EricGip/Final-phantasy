@@ -1,3 +1,7 @@
+import chocobo from "../assets/chocobo.png";
+import orc from "../assets/orc.png";
+import slime from "../assets/slime.png"
+
 //PULL CHARACTER STATS
 app.get("/api/user_stats", (req, res) => {
   db.Stats.find({
@@ -15,13 +19,17 @@ $(
         stats = stats
     });
 
+    // const monsterImages = [ orc, slime, chocobo]
+    // $("#monster").attr("src", monsterImages[random]);
+    // console.log(monsterImages)
+    
+
     $(document).on("click", ".action", function (event) {
         var action = $(this).attr("data")
         let user = stats;
 
         switch (action) {
-
-    monsters = [ orc, slime, chocobo]
+          
 
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
@@ -39,7 +47,9 @@ $(
 
       switch (action) {
         case "attack":
+          monster.Hp -= user.Attack;
           user.Attack = user.Attack;
+          $("#combat-log").append('you hit for' + {dmg} + "damage")
 
           break;
 

@@ -30,24 +30,32 @@ router.get("/stage1", function(req, res) {
   db.Stats.findOne({ UserId: req.user.id }).then(stats => {
     orc = {
       name: "orc",
-      hp: 10,
-      attack: 20,
-      defense: 10
+      hp: 100,
+      attack: 25,
+      defense: 30,
+      src: "../assets/orc.png",
+      quote: "yeet orc"
     };
 
     slime = {
       name: "slime",
-      hp: 10,
-      attack: 20,
-      defense: 10
+      hp: 45,
+      attack: 15,
+      defense: 25,
+      src: "../assets/slime.png",
+      quote: "yeet slime"
     };
 
     chocobo = {
       name: "chocobo",
-      hp: 10,
-      attack: 20,
-      defense: 10
+      hp: 60,
+      attack: 70,
+      defense: 20,
+      src: "../assets/chocobo.png",
+      quote: "yeet chocobo"
     };
+    
+    console.log(stats)
 
     monsters = [orc, slime, chocobo];
 
@@ -63,9 +71,12 @@ router.get("/stage1", function(req, res) {
 
     console.log(monsters[randomInt]);
 
+    // document.getElementById("monster").src=monsters[randomInt].src;
+
     res.render("stage1", {
-      stats: stats.DataValues,
-      monster: monsters[randomInt]
+      stats: stats.dataValues,
+      monster: monsters[randomInt],
+      random: randomInt
     });
   });
 });
