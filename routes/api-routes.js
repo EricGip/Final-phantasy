@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -15,12 +15,12 @@ module.exports = function(app) {
       // on log in, if no user, 
       if (!stats.id) {
         db.Stats.create({
-          Gil: 500,
-          Hp: 5,
-          Attack: 5,
-          Defense: 5,
-          Speed: 5,
-          Potion: 1,
+          gil: 500,
+          hp: 5,
+          attack: 5,
+          defense: 5,
+          speed: 5,
+          potion: 1,
           UserId: req.user.id
         }).then(results => {
           res.json({
@@ -33,12 +33,12 @@ module.exports = function(app) {
       else {
         res.json({
           email: req.user.email,
-            id: req.user.id,
-            stats: stats
+          id: req.user.id,
+          stats: stats
         })
       }
 
-      
+
     });
   });
 
@@ -85,42 +85,42 @@ module.exports = function(app) {
     db.Items.bulkCreate([
       {
         name: "Light Armor",
-        Hp: 5,
-        Attack: 0,
-        Defense: 5,
-        Speed: -1
+        hp: 5,
+        attack: 0,
+        defense: 5,
+        speed: -1
       },
       {
         name: "Heavy Armor",
-        Hp: 10,
-        Attack: 0,
-        Defense: 15,
-        Speed: -2
+        hp: 10,
+        attack: 0,
+        defense: 15,
+        speed: -2
       },
       {
         name: "Even Heavier Armor",
-        Hp: 15,
-        Attack: 0,
-        Defense: 20,
-        Speed: -3
+        hp: 15,
+        attack: 0,
+        defense: 20,
+        speed: -3
       },
       {
         name: "Sword",
-        Attack: 3,
-        Defense: 5,
-        Speed: 5
+        attack: 3,
+        defense: 5,
+        speed: 5
       },
       {
         name: "Sword",
-        Attack: 3,
-        Defense: 5,
-        Speed: 5
+        attack: 3,
+        defense: 5,
+        speed: 5
       },
       {
         name: "Sword",
-        Attack: 3,
-        Defense: 5,
-        Speed: 5
+        attack: 3,
+        defense: 5,
+        speed: 5
       }
     ]).then(results => {
       res.json(results);
@@ -129,11 +129,11 @@ module.exports = function(app) {
 
   app.post("/api/post_static_data", (req, res) => {
     db.Stats.Create({
-      Gil: 500,
-      Hp: 5,
-      Attack: 0,
-      Defense: 5,
-      Speed: -1,
+      gil: 500,
+      hp: 5,
+      attack: 0,
+      defense: 5,
+      speed: -1,
       userId: req.user.id
     }).then(results => {
       res.json(results);
@@ -153,12 +153,12 @@ module.exports = function(app) {
 
   // userId = req.email for email or req.id
 
- // Route for getting all items in shop
-    app.get("/api/get_items", (req, res) => {
-      db.Items.findAll({}).then(function(dbItems) {
-        res.json(dbItems);
-      });
+  // Route for getting all items in shop
+  app.get("/api/get_items", (req, res) => {
+    db.Items.findAll({}).then(function (dbItems) {
+      res.json(dbItems);
     });
+  });
 
   //
 };
