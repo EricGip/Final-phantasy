@@ -5,19 +5,19 @@ var router = express.Router();
 // Import the model (cat.js) to use its database functions.
 var items = require("../models/items.js");
 
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
   res.render("signup");
 });
 
-router.get("/login", function(req, res) {
+router.get("/login", function (req, res) {
   res.render("login");
 });
 
-router.get("/members", function(req, res) {
+router.get("/members", function (req, res) {
   res.render("members");
 });
 
-router.get("/store", function(req, res) {
+router.get("/store", function (req, res) {
   db.Stats.findOne({ UserId: req.user.id }).then(stats => {
     res.render("store", { stats: stats.dataValues });
     console.log(stats.dataValues);
@@ -26,7 +26,7 @@ router.get("/store", function(req, res) {
   // res.render("store")
 });
 
-router.get("/stage1", function(req, res) {
+router.get("/stage1", function (req, res) {
   db.Stats.findOne({ UserId: req.user.id }).then(stats => {
     orc = {
       name: "orc",
@@ -54,7 +54,7 @@ router.get("/stage1", function(req, res) {
       src: "../assets/chocobo.png",
       quote: "yeet chocobo"
     };
-    
+
     console.log(stats)
 
     monsters = [orc, slime, chocobo];
@@ -81,25 +81,25 @@ router.get("/stage1", function(req, res) {
   });
 });
 
-router.get("/boss", function(req, res) {
+router.get("/boss", function (req, res) {
   db.Stats.findOne({ UserId: req.user.id }).then(stats => {
-    Seph={
+    Seph = {
       name: "Sephiroth",
       hp: 210,
       attack: 120,
       defense: 80,
-      src:"../assets/Sephiroth.gif",
-      quote:"Run or Fight, the outcome is the same, your defeat!"
+      src: "../assets/Sephiroth.gif",
+      quote: "Run or Fight, the outcome is the same, your defeat!"
     };
     // Boss=[Seph];
 
     // Boss=[Sephiroth];
 
-    res.render("boss", { 
-      stats: stats.dataValues, 
+    res.render("boss", {
+      stats: stats.dataValues,
       boss: Seph
     });
-    
+
   });
 });
 

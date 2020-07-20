@@ -13,92 +13,92 @@ app.get("/api/user_stats", (req, res) => {
 
 //action functions
 $(
-  document.readyState(function() {
+  document.readyState(function () {
     var stats;
     $.ajax("api/user_stats").then(function (stats) {
-        stats = stats
+      stats = stats
     });
-    
+
 
     $(document).on("click", ".action", function (event) {
-        var action = $(this).attr("data")
+      var action = $(this).attr("data")
+      let user = stats;
+
+      // switch (action) {
+
+      $.ajax("api/user_stats").then(function (stats) {
+        stats = stats;
+      });
+
+      $(".action").on("click", function (event) {
+        var action = $(this).attr("data");
         let user = stats;
 
         switch (action) {
-          
-    $.ajax("api/user_stats").then(function(stats) {
-      stats = stats;
-    });
+          case "attack":
+            monster.Hp -= user.Attack;
+            user.Attack = user.Attack;
+            $("#combat-log").append('you hit for' + { dmg } + "damage")
 
-    $(".action").on("click", function(event) {
-      var action = $(this).attr("data");
-      let user = stats;
+            break;
 
-      switch (action) {
-        case "attack":
-          monster.Hp -= user.Attack;
-          user.Attack = user.Attack;
-          $("#combat-log").append('you hit for' + {dmg} + "damage")
+          case "guard":
+            user.break;
+          case "guard":
 
-          break;
+            user.Defense = user.Defense;
+            function getRandomInt(min, max) {
+              min = Math.cell(min);
+              max = Math.floor(max);
+              return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+            }
 
-        case "guard":
-          user.break;
-            case "guard":
+            getRandomInt()
 
-                user.Defense = user.Defense;
-                function getRandomInt(min, max) {
-                    min = Math.cell(min);
-                    max = Math.floor(max);
-                    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-                }
+            break;
 
-                getRandomInt()
+          case "potion":
 
-                break;
+            user.Hp += 10;
+            user.potion -= 1;
 
-            case "potion":
+            break;
 
-                user.Hp += 10;
-                user.potion -= 1;
+          case "item":
+            user.break;
 
-                break;
-
-        case "item":
-          user.break;
-
-        case "run":
-          //code here
+          case "run":
+            //code here
 
 
-          break;
+            break;
 
-        default:
-        // code block
+          default:
+          // code block
+        }
+      });
+
+      //attack!
+      function attack() {
+        // route to data base that retrieves the user's attack
+        //
       }
+
+      //defend...does this reduce damage the user takes?
+      function guard() { }
+
+      //use a health pot?
+      function item() { }
+
+      //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
+      function run() { }
+
+      //win or lose
+      function condition() {
+
+      };
+
     });
-
-    //attack!
-    function attack() {
-      // route to data base that retrieves the user's attack
-      //
-    }
-
-    //defend...does this reduce damage the user takes?
-    function guard() {}
-
-    //use a health pot?
-    function item() {}
-
-    //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
-    function run() {}
-
-    //win or lose
-    function condition() {
-
-    };
-
-});
 
 // function getRandomInt(min, max) {
 //     min = Math.ceil(min);

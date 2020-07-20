@@ -80,9 +80,9 @@
                 <div class="card-body">
                     <h5 class="card-title whiteFont mediumFont"> Combat Log </h5>
                     <p class="card-text combat-log">
-                        <p class="card-text whiteFont mediumFont">
-                            A {{monster.name}} is in front of you, what will you do?
-                        </p>
+                    <p class="card-text whiteFont mediumFont">
+                        A {{monster.name}} is in front of you, what will you do?
+                    </p>
                 </div>
             </div>
         </div>
@@ -90,10 +90,11 @@
         <div class="col-sm-4">
             <div class="card" id="monster-card" style="width: 18rem;">
                 <div class="card-body whiteFont mediumFont">
-                    <img id="monster" src="assets/chocobo.png" class="card-img-top" alt="assets/knight.png" />
+
+                    <img id="monster" src="{{monster.src}}" class="card-img-top" alt="monster" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
-                        <h5> {{monster.quote}} </h5>
+                    <h5> {{monster.quote}} </h5>
                     </p>
 
 
