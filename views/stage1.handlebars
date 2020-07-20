@@ -11,9 +11,11 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Game</a>
-        <button id="toSHOP">Shop</button>
+        <img class="mainSign" src="/assets/FinalPhantasy.png">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,10 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/store"> Store <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Stats</a>
@@ -37,104 +36,34 @@
     </nav>
 
 
-
-    {{!-- <div class="card" id="hero-card" style="width: 10rem;">
-        <img src="assets/knight.png" class="card-img-top" alt="knight" />
-        <div class="card-body">
-            <h5 class="card-title">FIGHT!!!</h5>
-            <p class="card-text">
-                A {{monster.name}} is in front of you, what will you do?
-            </p>
-        </div>
-
-        <ul class="list-group list-group-flush">
-            <br />
-            <li class="atk"><button class="action" data="attack">Attack</button></li>
-            <br />
-            <li class="guard"><button class="action" data="guard">Guard</button></li>
-            <br />
-            <li class="item"><button class="action" data="potion">Item</button></li>
-            <br />
-            <li class="run"><button class="action" data="run">Run</button></li>
-            <br />
-        </ul>
-    </div>
-
-
-
-    <p class="card-text">
-        A {{monster.name}} is in front of you, what will you do?
-        {{monster.hp}}
-        {{monster.attack}}
-        {{monster.defense}}
-    </p>
-
-    <div class="userStat">
-        Hit Points(HP): {{ stats.hp }}
-        Attack Power: {{stats.attack}}
-        Defense: {{stats.defense}}
-        Speed: {{user.speed}}
-        Potion Count: #(place holder)
-        Gil: {{user.gil}}g
-    </div>
-
-    <div class="card" id="monster-card" style="width: 10rem;">
-        <img id="monster" src="" class="card-img-top right-img" alt="assets/knight.png" />
-        <div class="card-body">
-            <h5 class="card-title">FIGHT!!!</h5>
-            <p class="card-text">
-                A {{monster.name}} is in front of you, what will you do?
-            </p>
-        </div>
-
-        <ul class="list-group list-group-flush">
-            <br />
-            <li class="atk"><button class="action" data="attack">Attack</button></li>
-            <br />
-            <li class="guard"><button class="action" data="guard">Guard</button></li>
-            <br />
-            <li class="item"><button class="action" data="potion">Item</button></li>
-            <br />
-            <li class="run"><button class="action" data="run">Run</button></li>
-            <br />
-        </ul>
-
-        <div class="card">
-            Hit Points(HP): {{ stats.hp }}
-            Attack Power: {{stats.attack}}
-            Defense: {{stats.defense}}
-            Speed: {{user.speed}}
-            Potion Count: #(place holder)
-            Gil: {{user.gil}}g
-        </div>
-    </div> --}}
-
     <div class="row">
         <div class="col-sm-4">
-            <div class="card" id="hero-card" style="width: 10rem;">
-                <div class="card-body">
+            <div class="card" id="hero-card" style="width: 18rem;">
+                <div class="card-body whiteFont mediumFont">
                     <img src="assets/knight.png" class="card-img-top" alt="knight" />
                     <h5 class="card-title">FIGHT!!!</h5>
-                    <p class="card-text">
+                    <p class="card-text ">
                         A {{monster.name}} is in front of you, what will you do?
                     </p>
-                </div>
 
-                <ul class="list-group list-group-flush">
+
+                    <ul class="list-group list-group-flush"></ul>
                     <br />
                     <li class="atk"><button class="action" data="attack">Attack</button></li>
                     <br />
                     <li class="guard"><button class="action" data="guard">Guard</button></li>
                     <br />
-                    <li class="item"><button class="action" data="potion">Item</button></li>
+                    <li class="item"><button class="action" data="potion">Potion</button></li>
                     <br />
                     <li class="run"><button class="action" data="run">Run</button></li>
                     <br />
-                </ul>
+                    </ul>
 
-                <div class="card">
+
                     Hit Points(HP): {{stats.hp}}
+                    <br>
                     Attack Power: {{stats.attack}}
+                    <br>
                     Defense: {{stats.defense}}
                     <br>
                     Speed: {{stats.speed}}
@@ -149,26 +78,26 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"> Combat Log </h5>
+                    <h5 class="card-title whiteFont mediumFont"> Combat Log </h5>
                     <p class="card-text combat-log">
-                    <p class="card-text">
-                        A {{monster.name}} is in front of you, what will you do?
-                    </p>
+                        <p class="card-text whiteFont mediumFont">
+                            A {{monster.name}} is in front of you, what will you do?
+                        </p>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-4">
-            <div class="card" id="monster-card" style="width: 10rem;">
-                <div class="card-body">
-                    <img id="monster" src="assets/chocobo.png" class="card-img-top right-img" alt="assets/knight.png" />
+            <div class="card" id="monster-card" style="width: 18rem;">
+                <div class="card-body whiteFont mediumFont">
+                    <img id="monster" src="assets/chocobo.png" class="card-img-top" alt="assets/knight.png" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
-                    <h5> {{monster.quote}} </h5>
+                        <h5> {{monster.quote}} </h5>
                     </p>
-                </div>
 
-                <ul class="list-group list-group-flush">
+
+                    <ul class="list-group list-group-flush"> </ul>
                     <br />
                     <li class="atk"><button class="action" data="attack">Attack</button></li>
                     <br />
@@ -178,17 +107,19 @@
                     <br />
                     <li class="run"><button class="action" data="run">Run</button></li>
                     <br />
-                </ul>
+                    </ul>
 
-                <div class="card">
+
                     Hit Points(HP): {{monster.hp}}
+                    <br>
                     Attack Power: {{monster.attack}}
+                    <br>
                     Defense: {{monster.defense}}
                 </div>
             </div>
         </div>
     </div>
-  
+
     </div>
 
     </div>
