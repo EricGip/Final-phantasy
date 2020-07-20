@@ -94,7 +94,7 @@ $(
       // route to data base that retrieves the user's attack
       //
     }
-
+ 
     //defend...does this reduce damage the user takes?
     function guard() {}
 
