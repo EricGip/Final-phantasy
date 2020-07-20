@@ -3,11 +3,7 @@ form.login {
   margin-top: 50px;
 }
 
-.footer {
-  text-align: center;
-  color: snow;
-  background-color: black;
-}
+
 
 .navbar {
   padding-bottom: 20px;
@@ -22,8 +18,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* height: 100vh;
+  height: 90vh;
+  /* 
   display: flex; */
   /* flex-direction: column;
   justify-content: center;
@@ -71,6 +67,21 @@ li {
 
 #hero-card {
   position: absolute;
+  left: 50px;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+#monster-card {
+  position: absolute;
+  right: 50px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.right-img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .atk,
@@ -101,4 +112,15 @@ li {
 .login-container {
   color: red;
   font-family: cursive;
+}
+
+.footer {
+  text-align: center;
+  color: snow;
+  background-color: black;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
 }
