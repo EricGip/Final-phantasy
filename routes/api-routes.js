@@ -120,8 +120,6 @@ module.exports = function (app) {
       attack: req.body.attack,
       defense: req.body.defense,
       speed: req.body.speed,
-      potion: req.body.potion,
-      gil: req.body.potion,
     },{
       where: {
       UserId: req.user.id
@@ -132,4 +130,30 @@ module.exports = function (app) {
     })
   })
 
+  app.put("/api/updatePotion", (req, res) => {
+    db.Stats.update({
+      potion: req.body.potion
+    },{
+      where: {
+      UserId: req.user.id
+      }
+    }).then(results => {
+      console.log(results);
+      res.json(results);
+    })
+  })
+  
+  app.put("/api/updateGil", (req, res) => {
+    db.Stats.update({
+      gil: req.body.gil
+    },{
+      where: {
+      UserId: req.user.id
+      }
+    }).then(results => {
+      console.log(results);
+      res.json(results);
+    })
+  })
+  
 };
