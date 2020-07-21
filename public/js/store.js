@@ -1,6 +1,27 @@
 $(document).ready(function() {
   console.log("hello");
 
+  // var boughtItem=$(".btn");
+  // $(document).on(".btn", "#item", handleboughtItems);
+  // getItems();
+
+  // function handleboughtItems(event){
+  //   event.preventDefault();
+  //   if(!boughtItem.val().trim().trim()){
+  //     return;
+  //   }
+  //   upsertItem({
+  //     item: boughtItem
+  //     .val()
+  //     .trim()
+  //   });
+  // }
+  
+  //   function upsertItem(itemData){
+  //     $.post("/api/user_stats", itemData)
+  //     .then(getItems);
+  //   }
+
   const storeItems = document.querySelector(".storeItem");
 
   const signHover = anime({
@@ -86,11 +107,9 @@ $(document).ready(function() {
         case "potion":
           user.potion = user.potion + 1;
           user.gil = user.gil - 10;
-          if (user.potion >= 5) {
             console.log(user.potion);
             $("#potion").addClass("disabled");
             $("#potion").prop("disabled", true);
-          }
           break;
 
         case "light":
@@ -118,3 +137,11 @@ $(document).ready(function() {
     });
   });
 });
+
+//         }
+//     })
+//   })
+        
+// }
+
+// )

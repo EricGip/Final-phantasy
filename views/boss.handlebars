@@ -36,14 +36,14 @@
         <div class="col-sm-4">
             <div class="card" id="hero-card" style="width: 18rem;">
                 <div class="card-body whiteFont mediumFont">
-                <img src="assets/knight.png" class="card-img-top" alt="knight" />
+                    <img src="assets/knight.gif" class="card-img-top" alt="knight" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
-                      {{boss.name}} is in front of you, what will you do?
+                        {{boss.name}} is in front of you, what will you do?
                     </p>
 
 
-                <ul class="list-group list-group-flush"></ul>
+                    <ul class="list-group list-group-flush"></ul>
                     <br />
                     <li class="atk"><button class="action" data="attack">Attack</button></li>
                     <br />
@@ -53,14 +53,14 @@
                     <br />
                     <li class="run"><button class="action" data="run">Run</button></li>
                     <br />
-                </ul>
+                    </ul>
 
 
                     Hit Points(HP): {{stats.hp}}
                     <br>
                     Attack Power: {{stats.attack}}
                     <br>
-                    Defense: {{stats.defense}} 
+                    Defense: {{stats.defense}}
                     <br>
                     Speed: {{stats.speed}}
                     <br>
@@ -75,8 +75,9 @@
             <div class="card">
                 <div class="card-body whiteFont mediumFont">
                     <h5 class="card-title largeFont"> Combat Log </h5>
-                    <p class="card-text combat-log"> <p class="card-text">
-                      {{boss.name}} is in front of you, what will you do?
+                    <p class="card-text combat-log">
+                    <p class="card-text">
+                        {{boss.name}} is in front of you, what will you do?
                     </p>
                 </div>
             </div>
@@ -85,11 +86,12 @@
         <div class="col-sm-4">
             <div class="card" id="monster-card" style="width: 18rem;">
                 <div class="card-body whiteFont mediumFont">
-                    <img id="monster" src="assets/Sephiroth.gif" class="card-img-top" alt="assets/knight.png" height="150" />
-                        <h5 class="card-title">FIGHT!!!</h5>
-                        <p class="card-text">
-                            <h5> {{boss.quote}} </h5>
-                        </p>
+                    <img id="monster" src="assets/Sephiroth.gif" class="card-img-top" alt="assets/knight.png"
+                        height="150" />
+                    <h5 class="card-title">FIGHT!!!</h5>
+                    <p class="card-text">
+                    <h5> {{boss.quote}} </h5>
+                    </p>
 
 
                     <ul class="list-group list-group-flush">
@@ -105,11 +107,11 @@
                     </ul>
 
 
-                        Hit Points(HP): {{boss.hp}}
-                        <br>
-                        Attack Power: {{boss.attack}}
-                        <br>
-                        Defense: {{boss.defense}}
+                    Hit Points(HP): {{boss.hp}}
+                    <br>
+                    Attack Power: {{boss.attack}}
+                    <br>
+                    Defense: {{boss.defense}}
 
                 </div>
             </div>
@@ -118,7 +120,7 @@
 
     </div>
 
-      <script src="controllers/itemsController.js"></script>
+    <script src="controllers/itemsController.js"></script>
 
     <footer class="footer">Game 2020</footer>
 </body>
