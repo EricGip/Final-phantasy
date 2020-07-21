@@ -12,11 +12,10 @@ app.get("/api/user_stats", (req, res) => {
 });
 
 //action functions
-$(document.readyState(function () {
-  var stats;
-  $.ajax("api/user_stats").then(function (stats) {
-    stats = stats
-  });
+// $(document.readyState(function () {
+var Stats;
+$.ajax("api/user_stats").then(function (stats) {
+  Stats = Stats;
 
   // const monsterImages = [ orc, slime, chocobo]
   // $("#monster").attr("src", monsterImages[random]);
@@ -24,78 +23,68 @@ $(document.readyState(function () {
 
 
   $(document).on("click", ".action", function (event) {
-    // var action = $(this).attr("data")
-    // let user = stats;
+    var action = $(this).attr("data")
+    let user = Stats;
 
-    // // switch (action) {
+    switch (action) {
 
-    $.ajax("api/user_stats").then(function (stats) {
-      stats = stats;
-    });
+      case "attack":
+        monster.hp -= user.attack - monster.defense;
+        $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
+        user.hp -= monster.attack - user.defense;
+        $("#combat-log").append({ monster } + "hit you for" + { dmg } + "damage")
 
-    $(".action").on("click", function (event) {
-      var action = $(this).attr("data");
-      let user = stats;
+        break;
 
-      switch (action) {
+      case "guard":
+        user.hp -= monster.attack - user.defense * 2;
+        $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
+        monster.hp -= user.attack - monster.defense;
+        $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
 
-        case "attack":
-          monster.hp -= user.attack - monster.defense;
-          $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-          user.hp -= monster.attack - user.defense;
-          $("#combat-log").append({ monster } + "hit you for" + { dmg } + "damage")
+        break;
 
-          break;
-
-        case "guard":
-          user.hp -= monster.attack - user.defense * 2;
-          $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-          monster.hp -= user.attack - monster.defense;
-          $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-
-          break;
-
-        case "potion":
-          user.hp += 20;
-          user.potion -= 1;
-          $("#combat-log").append("you heal for 20 hp")
-          user.hp -= monster.attack - user.defense;
-          $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
+      case "potion":
+        user.hp += 20;
+        user.potion -= 1;
+        $("#combat-log").append("you heal for 20 hp")
+        user.hp -= monster.attack - user.defense;
+        $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
 
 
-          break;
+        break;
 
-        case "run":
-          alert("You are not fit to be an adventurer - RUN AWAY YOU COWARD!!11!!")
+      case "run":
+        alert("You are not fit to be an adventurer - RUN AWAY YOU COWARD!!11!!");
+        window.location();
 
 
-          break;
+        break;
 
-        default:
-        // code block
-      }
-    });
-
-    //attack!
-    function attack() {
-      // route to data base that retrieves the user's attack
-      //
+      default:
+      // code block
     }
-
-    //defend...does this reduce damage the user takes?
-    function guard() { }
-
-    //use a health pot?
-    function item() { }
-
-    //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
-    function run() { }
-
-    //win or lose
-    function condition() {
-
-    };
-
   });
 
-}));
+  //attack!
+  function attack() {
+    // route to data base that retrieves the user's attack
+    //
+  }
+
+  //defend...does this reduce damage the user takes?
+  function guard() { }
+
+  //use a health pot?
+  function item() { }
+
+  //run away and we going to pop up a alert sating...you sissy...you ran away...game over?
+  function run() { }
+
+  //win or lose
+  function condition() {
+  };
+
+});
+// }));
+
