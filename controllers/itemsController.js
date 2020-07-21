@@ -33,7 +33,7 @@ router.get("/stage1", function (req, res) {
       hp: 100,
       attack: 25,
       defense: 30,
-      src: "../assets/orc.png",
+      src: "../assets/orc.gif",
       quote: "yeet orc"
     };
 
@@ -42,7 +42,7 @@ router.get("/stage1", function (req, res) {
       hp: 45,
       attack: 15,
       defense: 25,
-      src: "../assets/slime.png",
+      src: "../assets/slime.gif",
       quote: "yeet slime"
     };
 
@@ -51,7 +51,7 @@ router.get("/stage1", function (req, res) {
       hp: 60,
       attack: 70,
       defense: 20,
-      src: "../assets/chocobo.png",
+      src: "../assets/chocobo.gif",
       quote: "yeet chocobo"
     };
 
