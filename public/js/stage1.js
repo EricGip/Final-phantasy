@@ -3,13 +3,6 @@
 // import slime from "../assets/slime.png"
 
 //PULL CHARACTER STATS
-app.get("/api/user_stats", (req, res) => {
-  db.Stats.find({
-    UserID: req.user.id
-  }).then(results => {
-    console.log(results);
-  });
-});
 
 //action functions
 // $(document.readyState(function () {
@@ -29,10 +22,12 @@ $.ajax("api/user_stats").then(function (stats) {
     switch (action) {
 
       case "attack":
-        monster.hp -= user.attack - monster.defense;
-        $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-        user.hp -= monster.attack - user.defense;
-        $("#combat-log").append({ monster } + "hit you for" + { dmg } + "damage")
+        monster.hp -= stats.attack - monster.defense;
+
+        stats.hp -= monster.attack - stats.defense;
+
+        console.log(stats)
+
 
         break;
 
