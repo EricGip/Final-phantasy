@@ -114,11 +114,22 @@ module.exports = function (app) {
 
   //updating user stats
 
-  app.get("/api/update_stats", (req, res) => {
-    db.Stats.find({
+  app.put("/api/updateStats", (req, res) => {
+    db.Stats.update({
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense,
+      speed: req.body.speed,
+      potion: req.body.potion,
+      gil: req.body.potion,
+    },{
+      where: {
       UserId: req.user.id
+      }
     }).then(results => {
-      stats.save();
+      console.log(results);
+      res.json(results);
     })
   })
+
 };
