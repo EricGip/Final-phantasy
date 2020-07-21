@@ -10,11 +10,12 @@ $.ajax("api/user_stats").then(function (stats) {
     switch (action) {
 
       case "attack":
-        monster.hp -= user.attack - monster.defense;
-        // $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-        user.hp -= monster.attack - user.defense;
-        // $("#combat-log").append({ monster } + "hit you for" + { dmg } + "damage")
-        console.log("attack");
+        monster.hp -= stats.attack - monster.defense;
+
+        user.hp -= monster.attack - stats.defense;
+
+        console.log("attack", user.hp, monster.attack, monster.hp)
+
         break;
 
       case "guard":
@@ -22,7 +23,7 @@ $.ajax("api/user_stats").then(function (stats) {
         // $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
         monster.hp -= user.attack - monster.defense;
         // $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-        console.log("guard");
+        console.log("guard", user, monster);
         break;
 
       case "potion":
@@ -31,14 +32,14 @@ $.ajax("api/user_stats").then(function (stats) {
         // $("#combat-log").append("you heal for 20 hp")
         user.hp -= monster.attack - user.defense;
         // $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
-        console.log("potion");
+        console.log("potion", user, monster);
 
         break;
 
       case "run":
         alert("You are not fit to be an adventurer - RUN AWAY YOU COWARD!!11!!");
         window.open('', '_self').close();
-        console.log("run");
+        console.log("running away");
 
         break;
 

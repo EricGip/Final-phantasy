@@ -16,7 +16,7 @@ $(document).ready(function() {
   //     .trim()
   //   });
   // }
-  
+
   //   function upsertItem(itemData){
   //     $.post("/api/user_stats", itemData)
   //     .then(getItems);
@@ -55,12 +55,13 @@ $(document).ready(function() {
   var Stats;
   $.ajax("api/user_stats").then(function(Stats) {
     Stats = Stats;
-    console.log("ajax");
+    // console.log("ajax");
     console.log(Stats);
 
     $(document).on("click", ".buy", function(event) {
       var picked = $(this).attr("data");
       console.log("clicked");
+
       let user = Stats;
       console.log(Stats);
       switch (picked) {
@@ -70,6 +71,22 @@ $(document).ready(function() {
           user.defense = user.defense + 5;
           user.speed = user.speed + 5;
           user.gil = user.gil - 5;
+
+          $.ajax("/api/updateStats", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          $.ajax("/api/updateGil", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          //   console.log(Stats);
           $("#sword").addClass("disabled");
           $("#sword").prop("disabled", true);
           break;
@@ -80,6 +97,21 @@ $(document).ready(function() {
           user.defense = user.defense + 3;
           user.speed = user.speed + 3;
           user.gil = user.gil - 5;
+
+          $.ajax("/api/updateStats", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          $.ajax("/api/updateGil", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
           $("#axe").addClass("disabled");
           $("axe").prop("disabled", true);
           break;
@@ -90,6 +122,20 @@ $(document).ready(function() {
           user.defense = user.defense + 2;
           user.speed = user.speed + 2;
           user.gil = user.gil - 5;
+
+          $.ajax("/api/updateStats", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          $.ajax("/api/updateGil", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
           $("#hammer").addClass("disabled");
           $("#hammer").prop("disabled", true);
           break;
@@ -97,9 +143,27 @@ $(document).ready(function() {
         case "potion":
           user.potion = user.potion + 1;
           user.gil = user.gil - 10;
-            console.log(user.potion);
-            $("#potion").addClass("disabled");
-            $("#potion").prop("disabled", true);
+
+            if (user.potion >= 5) {
+          $.ajax("/api/updatePotion", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          $.ajax("/api/updateGil", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+
+          console.log(user.potion);
+          $("#potion").addClass("disabled");
+          $("#potion").prop("disabled", true);
+        }
           break;
 
         case "light":
@@ -109,6 +173,20 @@ $(document).ready(function() {
           user.defense = user.defense + 20;
           user.speed = user.speed - 3;
           user.gil = user.gil - 25;
+
+          $.ajax("/api/updateStats", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          $.ajax("/api/updateGil", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
           $("#light").addClass("disabled");
           $("#light").addClass("disabled");
           break;
@@ -120,6 +198,21 @@ $(document).ready(function() {
           user.defense = user.defense + 50;
           user.speed = user.speed - 10;
           user.gil = user.gil - 25;
+
+          $.ajax("/api/updateStats", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
+          $.ajax("/api/updateGil", {
+            type: "PUT",
+            data: Stats
+          }).then(function(data) {
+            console.log(data);
+          });
+
           $("#heavy").addClass("disabled");
           $("#light").addClass("disabled");
           break;
@@ -131,7 +224,7 @@ $(document).ready(function() {
 //         }
 //     })
 //   })
-        
+
 // }
 
 // )
