@@ -144,6 +144,7 @@ $(document).ready(function() {
           user.potion = user.potion + 1;
           user.gil = user.gil - 10;
 
+            if (user.potion >= 5) {
           $.ajax("/api/updatePotion", {
             type: "PUT",
             data: Stats
@@ -158,10 +159,11 @@ $(document).ready(function() {
             console.log(data);
           });
 
-          
+
           console.log(user.potion);
           $("#potion").addClass("disabled");
           $("#potion").prop("disabled", true);
+        }
           break;
 
         case "light":
