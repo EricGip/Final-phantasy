@@ -55,21 +55,31 @@ $(document).ready(function() {
   var Stats;
   $.ajax("api/user_stats").then(function(Stats) {
     Stats = Stats;
-    console.log("ajax");
-    console.log(Stats);
+    // console.log("ajax");
+    // console.log(Stats);
 
     $(document).on("click", ".buy", function(event) {
       var picked = $(this).attr("data");
       console.log("clicked");
+
       let user = Stats;
-      console.log(Stats);
+    //   console.log(Stats);
       switch (picked) {
         case "sword":
           $("#axe, #hammer").addClass("disabled");
-          user.attack = user.attack + 3;
-          user.defense = user.defense + 5;
-          user.speed = user.speed + 5;
-          user.gil = user.gil - 5;
+        user.attack = user.attack + 3;
+        user.defense = user.defense + 5;
+        user.speed = user.speed + 5;
+        user.gil = user.gil - 5;
+
+          $.ajax("/api/updateStats", {
+            type: "PUT",
+            data: Stats,
+            }).then(function(data) {
+                console.log(data)
+            })
+
+        //   console.log(Stats);
           $("#sword").addClass("disabled");
           $("#sword").prop("disabled", true);
           break;

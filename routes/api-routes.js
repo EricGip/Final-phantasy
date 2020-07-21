@@ -79,54 +79,6 @@ module.exports = function (app) {
     }
   });
 
-  // inserting dummy data
-
-  app.post("/api/post_static_data", (req, res) => {
-    db.Items.bulkCreate([
-      {
-        name: "Light Armor",
-        hp: 5,
-        attack: 0,
-        defense: 5,
-        speed: -1
-      },
-      {
-        name: "Heavy Armor",
-        hp: 10,
-        attack: 0,
-        defense: 15,
-        speed: -2
-      },
-      {
-        name: "Even Heavier Armor",
-        hp: 15,
-        attack: 0,
-        defense: 20,
-        speed: -3
-      },
-      {
-        name: "Sword",
-        attack: 3,
-        defense: 5,
-        speed: 5
-      },
-      {
-        name: "Sword",
-        attack: 3,
-        defense: 5,
-        speed: 5
-      },
-      {
-        name: "Sword",
-        attack: 3,
-        defense: 5,
-        speed: 5
-      }
-    ]).then(results => {
-      res.json(results);
-    });
-  });
-
   app.post("/api/post_static_data", (req, res) => {
     db.Stats.Create({
       gil: 500,
@@ -160,5 +112,24 @@ module.exports = function (app) {
     });
   });
 
-  //
+  //updating user stats
+
+  app.put("/api/updateStats", (req, res) => {
+    db.Stats.update({
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense,
+      speed: req.body.speed,
+      potion: req.body.potion,
+      gil: req.body.potion,
+    },{
+      where: {
+      UserId: req.user.id
+      }
+    }).then(results => {
+      console.log(results);
+      res.json(results);
+    })
+  })
+
 };
