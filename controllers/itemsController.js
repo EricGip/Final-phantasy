@@ -27,7 +27,7 @@ router.get("/store", function (req, res) {
 });
 
 router.get("/stage1", function (req, res) {
-  db.Stats.findOne({ UserId: req.user.id }).then(stats => {
+  db.Stats.findOne({ where: {UserId: req.user.id} }).then(stats => {
     orc = {
       name: "orc",
       hp: 100,
@@ -73,8 +73,6 @@ router.get("/stage1", function (req, res) {
 
     chosenMonster = monsters[randomInt]
 
-    // document.getElementById("monster").src=monsters[randomInt].src;
-
     res.render("stage1", {
       stats: stats.dataValues,
       monster: chosenMonster,
@@ -84,7 +82,7 @@ router.get("/stage1", function (req, res) {
 });
 
 router.get("/boss", function (req, res) {
-  db.Stats.findOne({ UserId: req.user.id }).then(stats => {
+  db.Stats.findOne({ where: {UserId: req.user.id} }).then(stats => {
     Seph = {
       name: "Sephiroth",
       hp: 210,
@@ -93,15 +91,11 @@ router.get("/boss", function (req, res) {
       src: "../assets/Sephiroth.gif",
       quote: "Run or Fight, the outcome is the same, your defeat!"
     };
-    // Boss=[Seph];
-
-    // Boss=[Sephiroth];
 
     res.render("boss", {
       stats: stats.dataValues,
       boss: Seph
     });
-
   });
 });
 
