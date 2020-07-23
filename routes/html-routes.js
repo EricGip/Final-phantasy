@@ -31,4 +31,8 @@ module.exports = function (app) {
   app.get("/stage1", isAuthenticated, (req, res) => {
     res.render("stage1")
   })
+
+  app.get("/boss", isAuthenticated, (req, res) => {
+    res.render("boss")
+  })
 };
