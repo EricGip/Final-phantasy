@@ -71,11 +71,13 @@ router.get("/stage1", function (req, res) {
 
     console.log(monsters[randomInt]);
 
+    chosenMonster = monsters[randomInt]
+
     // document.getElementById("monster").src=monsters[randomInt].src;
 
     res.render("stage1", {
       stats: stats.dataValues,
-      monster: monsters[randomInt],
+      monster: chosenMonster,
       random: randomInt
     });
   });
