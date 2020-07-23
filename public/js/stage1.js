@@ -2,20 +2,47 @@ var stats;
 $.ajax("api/user_stats").then(function (stats) {
   stats = stats;
 
+  if (monster.name === "orc") {
+    monsterStats = {
+      name: "orc",
+      hp: 100,
+      attack: 25,
+      defense: 30,
+    };
+  } 
+  else if (monster.name === "slime") {
+    monsterStats = {
+      name: "slime",
+      hp: 75,
+      attack: 25,
+      defense: 30,
+    };
+  } 
+  else {
+    monsterStats = {
+      name: "chocobo",
+      hp: 150,
+      attack: 25,
+      defense: 30,
+    };
+  }
+
   $(document).on("click", ".action", function (event) {
     var action = $(this).attr("data")
     let user = stats;
     console.log("clicked")
 
+
     switch (action) {
 
       case "attack":
-        monster.hp -= stats.attack - monster.defense;
 
-        user.hp -= monster.attack - stats.defense;
+        user.hp -= monsterStats.attack - user.defense;
 
         console.log("attack", user.hp, monster.attack, monster.hp)
-
+        console.log(user)
+        console.log( monster )
+        console.log(monsterStats)
         break;
 
       case "guard":
