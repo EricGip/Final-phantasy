@@ -9,9 +9,13 @@ module.exports = function (app) {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     db.Stats.findAll({
-      userId: req.user.id
+      where: {
+        UserId: req.user.id
+      }
     }).then(stats => {
       console.log(stats)
+      console.log( "\n" + "\n" + "\n" + "\n" +req.user.id + "\n" + "\n" + "\n" + "\n");
+
       // on log in, if no user, 
       if (!stats.id) {
         db.Stats.create({
