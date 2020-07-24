@@ -51,14 +51,14 @@ $.ajax("api/user_stats").then(function(stats) {
         );
 
         if (monsterStats.hp > 0) {
-          user.hp -= monsterStats.attack - Math.floor(user.defense * 0.3);
+          user.hp -= monsterStats.attack - Math.floor(user.defense / 0.3);
 
           $(".combat-log").append(
             "<br />" +
               "The " +
               monsterStats.name +
               " retaliates! It strikes for " +
-              (monsterStats.attack - Math.floor(user.defense * 0.2)) +
+              (monsterStats.attack - Math.floor(user.defense / 0.2)) +
               "<br />"
           );
 
