@@ -100,7 +100,9 @@ module.exports = function (app) {
 
   app.get("/api/user_stats", (req, res) => {
     db.Stats.find({
-      UserId: req.user.id
+      where: {
+        UserId: req.user.id
+      }
     }).then(results => {
       console.log(results);
       res.json(results);
