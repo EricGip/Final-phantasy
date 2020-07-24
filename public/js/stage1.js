@@ -97,6 +97,12 @@ $.ajax("api/user_stats").then(function(stats) {
             "<br />"
         );
 
+        if (user.hp <= 0) {
+          $(".combat-log").append("<br />" + "You died!" + "<br />");
+        } else {
+          break;
+        }
+
         // $("#combat-log").append("you hit" + { monster } + "for" + { dmg } + "damage")
         console.log("guard", user, monsterStats);
         break;
@@ -132,6 +138,14 @@ $.ajax("api/user_stats").then(function(stats) {
             "You attempt to flee... " +
             "<br />" +
             "failed..." +
+            "<br />"
+        );
+
+        $(".combat-log").append(
+          "<br />" +
+            "The " +
+            monsterStats.name +
+            ' shouts: "COWARD!!!"' +
             "<br />"
         );
 
