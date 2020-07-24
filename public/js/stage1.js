@@ -7,7 +7,7 @@ $.ajax("api/user_stats").then(function(stats) {
       name: "orc",
       hp: 100,
       attack: 50,
-      defense: 0,
+      defense: 20,
       gil: 45
     };
   } else if (monster.name === "slime") {
@@ -15,7 +15,7 @@ $.ajax("api/user_stats").then(function(stats) {
       name: "slime",
       hp: 75,
       attack: 55,
-      defense: 0,
+      defense: 15,
       gil: 45
     };
   } else {
@@ -23,7 +23,7 @@ $.ajax("api/user_stats").then(function(stats) {
       name: "chocobo",
       hp: 150,
       attack: 35,
-      defense: 0,
+      defense: 10,
       gil: 45
     };
   }
