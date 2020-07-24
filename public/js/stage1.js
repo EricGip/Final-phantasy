@@ -51,14 +51,14 @@ $.ajax("api/user_stats").then(function(stats) {
         );
 
         if (monsterStats.hp > 0) {
-          user.hp -= monsterStats.attack - Math.floor(user.defense / 0.3);
+          user.hp -= monsterStats.attack - user.defense;
 
           $(".combat-log").append(
             "<br />" +
               "The " +
               monsterStats.name +
               " retaliates! It strikes for " +
-              (monsterStats.attack - Math.floor(user.defense / 0.2)) +
+              (monsterStats.attack - user.defense) +
               "<br />"
           );
 
@@ -87,13 +87,13 @@ $.ajax("api/user_stats").then(function(stats) {
         break;
 
       case "guard":
-        user.hp -= monsterStats.attack - user.defense * 2;
+        user.hp -= monsterStats.attack - user.defense;
         $(".combat-log").append(
           "<br />" +
             "You wisely defend... the " +
             monsterStats.name +
             " hits you for " +
-            (monsterStats.attack - user.defense * 2) +
+            (monsterStats.attack - user.defense) +
             "<br />"
         );
 
@@ -103,15 +103,18 @@ $.ajax("api/user_stats").then(function(stats) {
 
       case "potion":
         if (user.potion > 0) {
-          user.hp += Math.floor(user.hp / 4) + 10;
+          user.hp += ((user.hp / 4) + 10 );
           user.potion -= 1;
           $(".combat-log").append(
             "<br />" +
               "You drink a potion and heal for " +
-              (Math.floor(user.hp / 4) + 10)
+              ((user.hp / 4) + 10)
           );
           $(".combat-log").append(
             "<br />" + "You now have " + user.potion + " potions" + "<br />"
+          );
+          $(".combat-log").append(
+            "You now have " + user.hp + " hp" + "<br />"
           );
         } else {
           $(".combat-log").append("<br />" + "You're out of pots!" + "<br />");
