@@ -39,26 +39,29 @@ router.get("/stage1", function(req, res) {
     orc = {
       name: "orc",
       hp: 100,
-      attack: 25,
-      defense: 30,
+      attack: 50,
+      defense: 20,
+      gil: 45,
       src: "../assets/orc.gif",
-      quote: "yeet orc"
+      quote: "yeet orc",
     };
 
     slime = {
       name: "slime",
-      hp: 45,
-      attack: 15,
-      defense: 25,
+      hp: 75,
+      attack: 55,
+      defense: 15,
+      gil: 45,
       src: "../assets/slime.gif",
       quote: "yeet slime"
     };
 
     chocobo = {
       name: "chocobo",
-      hp: 60,
-      attack: 70,
-      defense: 20,
+      hp: 150,
+      attack: 35,
+      defense: 10,
+      gil: 45,
       src: "../assets/chocobo.gif",
       quote: "yeet chocobo"
     };
