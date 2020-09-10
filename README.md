@@ -5,7 +5,9 @@ I was initially assigned to the backend, but after getting the routes running I 
 
 # Demo 
 
-https://final-phantasy.herokuapp.com/
+https://final-phantasy.herokuapp.com/.  
+
+If it returns [object Object] on sign up, the username has been taken; sorry!
 
 # My extra work after presentation day:  
 
