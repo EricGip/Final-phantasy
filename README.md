@@ -7,7 +7,13 @@ I was initially assigned to the backend, but after getting the routes running I 
 
 https://final-phantasy.herokuapp.com/.  
 
-If it returns [object Object] on sign up, the username has been taken; sorry!
+If the sign up page returns [object Object] on sign up, the username has been taken; sorry
+
+<img src="https://github.com/EricGip/Final-phantasy/blob/master/images/StoreExample.png" alt="Store example" height="200">. 
+
+<img src="https://github.com/EricGip/Final-phantasy/blob/master/images/ChocoboFightExample.png" alt="Fight and Strike Example" height="400">
+
+<img src="https://github.com/EricGip/Final-phantasy/blob/master/images/BossFightExample.png" alt="Boss and Fall Example" height="400">  
 
 # My extra work after presentation day:  
 
