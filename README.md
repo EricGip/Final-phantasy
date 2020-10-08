@@ -3,9 +3,7 @@ Full stack web adventure created with HTML, CSS, JavaScript, MySql, Sequelize, H
 
 I was initially assigned to the backend, but after getting the routes running I swapped over to the front end to help out my groupmates and just get the MVP down. I did most of the CSS, had to redo the whole stage 1/Boss HTML, and completed nearly all the JavaScript involved in this project by presentation day. I couldn't stand having this project so close to complete, so I completed the rest of the project and logged it below. 
 
-# Demo 
-
-https://final-phantasy.herokuapp.com/.  
+# [Demo](https://final-phantasy.herokuapp.com/) Here!
 
 If the sign up page returns [object Object] on sign up, the username has been taken; sorry
 
