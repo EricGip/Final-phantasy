@@ -5,7 +5,7 @@ I was initially assigned to the backend, but after getting the routes running I 
 
 # [Demo](https://final-phantasy.herokuapp.com/) Here!
 
-If the sign up page returns [object Object] on sign up, the username has been taken; sorry
+## There is already a guest / recruiter login account!
 
 <img src="https://github.com/EricGip/Final-phantasy/blob/master/images/StoreExample.png" alt="Store example" height="200">. 
 
