@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SDQS1Q5BG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9SDQS1Q5BG');
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -88,10 +98,10 @@
             <div class="card" id="monster-card" style="width: 18rem;">
                 <div class="card-body whiteFont mediumFont">
 
-                    <img id="boss" name= "{{boss.name}}" src="{{boss.src}}" class="card-img-top" alt="boss" />
+                    <img id="boss" name="{{boss.name}}" src="{{boss.src}}" class="card-img-top" alt="boss" />
                     <h5 class="card-title">FIGHT!!!</h5>
                     <p class="card-text">
-                    <h5> {{boss.quote}} </h5>
+                        <h5> {{boss.quote}} </h5>
                     </p>
 
 
