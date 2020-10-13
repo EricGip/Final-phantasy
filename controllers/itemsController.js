@@ -6,7 +6,7 @@ var router = express.Router();
 var items = require("../models/items.js");
 
 router.get("/", function(req, res) {
-  res.render("signup");
+  res.render("login");
 });
 
 router.get("/login", function(req, res) {
